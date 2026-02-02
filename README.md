@@ -3,9 +3,9 @@
 ## 👥 Miembros del Equipo
 | Nombre y Apellidos | Correo URJC | Usuario GitHub |
 |:--- |:--- |:--- |
-| [Mengying Xia Ruan] | [m.xia.2023]@alumnos.urjc.es | [Mengying04] |
-| [Jonás Aquiles Huertes Ramirez] | [ja.huertes.2023]@alumnos.urjc.es | [User2] |
-| [Adrián Aranda Matínez] | [email3]@alumnos.urjc.es | [User3] |
+| Mengying Xia Ruan | m.xia.2023@alumnos.urjc.es | Mengying04 |
+| Jonás Aquiles Huertes Ramirez | ja.huertes.2023@alumnos.urjc.es | [User2] |
+| Adrián Aranda Matínez | [email3]@alumnos.urjc.es | [User3] |
 
 ---
 
@@ -342,7 +342,7 @@ Diagrama actualizado incluyendo los @RestController y su relación con los @Serv
 
 ### **Participación de Miembros en la Práctica 3**
 
-#### **Alumno 1 - [Nombre Completo]**
+#### **Alumno 1 - Mengying Xia Ruan**
 
 [Descripción de las tareas y responsabilidades principales del alumno en el proyecto]
 
@@ -356,7 +356,7 @@ Diagrama actualizado incluyendo los @RestController y su relación con los @Serv
 
 ---
 
-#### **Alumno 2 - [Nombre Completo]**
+#### **Alumno 2 - Jonás Aquiles Huertes Ramirez**
 
 [Descripción de las tareas y responsabilidades principales del alumno en el proyecto]
 
@@ -370,21 +370,7 @@ Diagrama actualizado incluyendo los @RestController y su relación con los @Serv
 
 ---
 
-#### **Alumno 3 - [Nombre Completo]**
-
-[Descripción de las tareas y responsabilidades principales del alumno en el proyecto]
-
-| Nº    | Commits      | Files      |
-|:------------: |:------------:| :------------:|
-|1| [Descripción commit 1](URL_commit_1)  | [Archivo1](URL_archivo_1)   |
-|2| [Descripción commit 2](URL_commit_2)  | [Archivo2](URL_archivo_2)   |
-|3| [Descripción commit 3](URL_commit_3)  | [Archivo3](URL_archivo_3)   |
-|4| [Descripción commit 4](URL_commit_4)  | [Archivo4](URL_archivo_4)   |
-|5| [Descripción commit 5](URL_commit_5)  | [Archivo5](URL_archivo_5)   |
-
----
-
-#### **Alumno 4 - [Nombre Completo]**
+#### **Alumno 3 - Adrián Aranda Matínez**
 
 [Descripción de las tareas y responsabilidades principales del alumno en el proyecto]
 
