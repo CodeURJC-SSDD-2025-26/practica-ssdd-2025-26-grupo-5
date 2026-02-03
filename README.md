@@ -5,7 +5,7 @@
 |:--- |:--- |:--- |
 | Mengying Xia Ruan | m.xia.2023@alumnos.urjc.es | Mengying04 |
 | Jonás Aquiles Huertes Ramirez | ja.huertes.2023@alumnos.urjc.es | [User2] |
-| Adrián Aranda Matínez | [email3]@alumnos.urjc.es | [User3] |
+| Adrián Aranda Martínez | a.arandam.2021@alumnos.urjc.es | Adrian24864 |
 
 ---
 
@@ -370,7 +370,7 @@ Diagrama actualizado incluyendo los @RestController y su relación con los @Serv
 
 ---
 
-#### **Alumno 3 - Adrián Aranda Matínez**
+#### **Alumno 3 - Adrián Aranda Martínez**
 
 [Descripción de las tareas y responsabilidades principales del alumno en el proyecto]
 
