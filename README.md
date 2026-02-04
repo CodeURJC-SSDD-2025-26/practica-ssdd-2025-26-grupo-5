@@ -4,7 +4,7 @@
 | Nombre y Apellidos | Correo URJC | Usuario GitHub |
 |:--- |:--- |:--- |
 | Mengying Xia Ruan | m.xia.2023@alumnos.urjc.es | Mengying04 |
-| Jonás Aquiles Huertes Ramirez | ja.huertes.2023@alumnos.urjc.es | [User2] |
+| Jonás Aquiles Huertes Ramirez | ja.huertes.2023@alumnos.urjc.es | jonas-hr |
 | Adrián Aranda Martínez | a.arandam.2021@alumnos.urjc.es | Adrian24864 |
 
 ---
