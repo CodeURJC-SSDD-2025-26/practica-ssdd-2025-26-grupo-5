@@ -12,21 +12,21 @@
 ## 🎭 **Preparación: Definición del Proyecto**
 
 ### **Descripción del Tema**
-[Escribe aquí una descripción breve y concisa de qué trata tu aplicación, el sector al que pertenece y qué valor aporta al usuario].
+It is a web application designed for the reading community. Its main goal is to allow users to keep a detailed record of their readings, rate books, and organize their personal library. The website acts as a social network to discover books based on community opinions and recommendation algorithms.
 
 ### **Entidades**
-Indicar las entidades principales que gestionará la aplicación y las relaciones entre ellas:
+The application manages four main entities, all interrelated:
 
-1. **[Entidad 1]**: [Ej: Usuario]
-2. **[Entidad 2]**: [Ej: Producto]
-3. **[Entidad 3]**: [Ej: Pedido]
-4. **[Entidad 4]**: [Ej: Categoría]
+1. **User**: Represents the people registered on the platform. It store credentials, biography, avatar, and preferences.
+2. **Book**: The central entity. It contins technical details (title, author, ISBN, synopsis, genre) and the cover image.
+3. **Review**: Represents a specific user's opinion on a specific book. It contains all numerical score (0-10 points), a text comments, and the publication date.
+4. **Collections**: Allows users to group books a custom label.
 
 **Relaciones entre entidades:**
-- [Ej: Usuario - Pedido: Un usuario puede tener múltiples pedidos (1:N)]
-- [Ej: Pedido - Producto: Un pedido puede contener múltiples productos y un producto puede estar en múltiples pedidos (N:M)]
-- [Ej: Producto - Categoría: Un producto pertenece a una categoría (N:1)]
-- [Descripción de otras relaciones relevantes]
+- User - Review: An **User** can write multiple **Reviews**, but a **Review** belongs to only one **User** (1:N)
+- Book - Review: A **Book** can receive multiple **Reviews** from different **Users**, but a **Review** is linked to only one **Book** (1:N)
+- User - Collections: An **User** can create multiple **Collections**, but a **Collection** belong to only one **User** (1:N)
+- Collection - Book: One **Collection** can contains many **Books** and one **Book** can appear in many different **Collections** (N:M)
 
 ### **Permisos de los Usuarios**
 Describir los permisos de cada tipo de usuario e indicar de qué entidades es dueño:
