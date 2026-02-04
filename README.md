@@ -1,7 +1,7 @@
 # [Nombre de la Aplicación]
 
-## 👥 Miembros del Equipo
-| Nombre y Apellidos | Correo URJC | Usuario GitHub |
+## 👥 Group Menmbers
+| Fist name and Last name | URJC mail | GitHub User |
 |:--- |:--- |:--- |
 | Mengying Xia Ruan | m.xia.2023@alumnos.urjc.es | Mengying04 |
 | Jonás Aquiles Huertes Ramirez | ja.huertes.2023@alumnos.urjc.es | jonass-hr |
@@ -14,7 +14,7 @@
 ### **Subject Description**
 It is a web application designed for the reading community. Its main goal is to allow users to keep a detailed record of their readings, rate books, and organize their personal library. The website acts as a social network to discover books based on community opinions and recommendation algorithms.
 
-### **Entitys**
+### **Entities**
 The application manages four main entities, all interrelated:
 
 1. **User**: Represents the people registered on the platform. It store credentials, biography, avatar, and preferences.
@@ -23,13 +23,12 @@ The application manages four main entities, all interrelated:
 4. **Collections**: Allows users to group books a custom label.
 
 **Entity relationships:**
-- User - Review: An **User** can write multiple **Reviews**, but a **Review** belongs to only one **User** (1:N)
-- Book - Review: A **Book** can receive multiple **Reviews** from different **Users**, but a **Review** is linked to only one **Book** (1:N)
-- User - Collections: An **User** can create multiple **Collections**, but a **Collection** belong to only one **User** (1:N)
-- Collection - Book: One **Collection** can contains many **Books** and one **Book** can appear in many different **Collections** (N:M)
+- **User - Review**: An **User** can write multiple **Reviews**, but a **Review** belongs to only one **User** (1:N)
+- **Book - Review**: A **Book** can receive multiple **Reviews** from different **Users**, but a **Review** is linked to only one **Book** (1:N)
+- **User - Collections**: An **User** can create multiple **Collections**, but a **Collection** belong to only one **User** (1:N)
+- **Collection - Book**: One **Collection** can contains many **Books** and one **Book** can appear in many different **Collections** (N:M)
 
 ### **User Permissions**
-Describir los permisos de cada tipo de usuario e indicar de qué entidades es dueño:
 
 * **Anonymous User**: 
   - Permissions: The anonymous user can browse the book catalog, use the search engine, view book details (such as author, page  number, ISBN, etc.), read public reviews from the community.
@@ -37,18 +36,15 @@ Describir los permisos de cada tipo de usuario e indicar de qué entidades es du
 
 * **Registered User**: 
   - Permissions: It shares all the anonymouse user features, plus:
-
-         · Can create, edit and delete their own reviews.
-         · Can create, manage and delete own collections.
-         · Has access to a public profile with reading statistics
-         · Can upload an avatar picture.
+      - Can create, edit and delete their own reviews.
+      - Can create, manage and delete own collections.
+      - Has access to a public profile with reading statistics
+      - Can upload an avatar picture.
          
-
 * **Administrator**: 
   - Permissions: Has full control over the platform, is responsible for registiring new books in the system, can moderate content (such as deleting offensive reviews from any user), can manage users.
 
 ### **Images**
-Indicar qué entidades tendrán asociadas una o varias imágenes:
 
 - **Book**: A book cover, managed by the administrator when registering a new work.
 - **User**: A user avatar. Registered users can upload and update their profile pictures.
@@ -58,18 +54,14 @@ Indicar qué entidades tendrán asociadas una o varias imágenes:
 - **Reading activity**: A vertical bar chart showing the number of books read per month over the last year.
 - **Reviews chart**: An horizontal bar chart showing the numerical value that each user has put, and an average number calculated with all the reviews value.
 
-### **Tecnología Complementaria**
-Indicar qué tecnología complementaria se empleará:
+### **Complementaty Technology**
 
-- [Ej: Envío de correos electrónicos automáticos mediante JavaMailSender]
-- [Ej: Generación de PDFs de facturas usando iText o similar]
+- PDF Generation for **"Reading Wrap-Up"**: Is a implementation of a feature that allows users to download a summary of their yearly reading activity. We will use an external library (such as iText or OpenPDF) to dynamically generate a PDF document containing statistics: total books read, breakdown by month, favorite genres distribution, and top-rated authors.
 
-### **Algoritmo o Consulta Avanzada**
-Indicar cuál será el algoritmo o consulta avanzada que se implementará:
+### **Algorithm or Advanced Query**
 
-- **Algoritmo/Consulta**: [Ej: Sistema de recomendaciones basado en el historial de compras del usuario]
-- **Descripción**: [Ej: Analiza los productos comprados previamente y sugiere productos similares o complementarios utilizando filtrado colaborativo]
-- **Alternativa**: [Ej: Consulta compleja que agrupe ventas por categoría, mes y región, con cálculo de tendencias]
+- **Algorithm/Query**: Content based Recommendation System based on User Reviews.
+- **Description**: The system will analyze the user's review history to identify books that have received high scores (e.g., 8 out of 10 or higher). It will then extract the most frequent genres and authors from these highly-rated books. Finally, it will execute a complex query to suggest new books that match those preferences, excluding books the user has already read or added to their collections, ordered by the global community rating.
 
 ---
 
