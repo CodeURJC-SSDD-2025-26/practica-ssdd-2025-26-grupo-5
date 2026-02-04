@@ -93,7 +93,7 @@ Diagrama que muestra cómo se navega entre las diferentes páginas de la aplicac
 
 ### **Participación de Miembros en la Práctica 1**
 
-#### **Alumno 1 - [Nombre Completo]**
+#### **Alumno 1 - Mengying Xia Ruan**
 
 [Descripción de las tareas y responsabilidades principales del alumno en el proyecto]
 
@@ -107,7 +107,7 @@ Diagrama que muestra cómo se navega entre las diferentes páginas de la aplicac
 
 ---
 
-#### **Alumno 2 - [Nombre Completo]**
+#### **Alumno 2 - Jonás Aquiles Huertes Ramírez**
 
 [Descripción de las tareas y responsabilidades principales del alumno en el proyecto]
 
@@ -121,7 +121,7 @@ Diagrama que muestra cómo se navega entre las diferentes páginas de la aplicac
 
 ---
 
-#### **Alumno 3 - [Nombre Completo]**
+#### **Alumno 3 - Adrián Aranda Martínez**
 
 [Descripción de las tareas y responsabilidades principales del alumno en el proyecto]
 
