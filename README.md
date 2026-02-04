@@ -11,52 +11,52 @@
 
 ## 🎭 **Preparación: Definición del Proyecto**
 
-### **Descripción del Tema**
+### **Subject Description**
 It is a web application designed for the reading community. Its main goal is to allow users to keep a detailed record of their readings, rate books, and organize their personal library. The website acts as a social network to discover books based on community opinions and recommendation algorithms.
 
-### **Entidades**
+### **Entitys**
 The application manages four main entities, all interrelated:
 
 1. **User**: Represents the people registered on the platform. It store credentials, biography, avatar, and preferences.
 2. **Book**: The central entity. It contins technical details (title, author, ISBN, synopsis, genre) and the cover image.
-3. **Review**: Represents a specific user's opinion on a specific book. It contains all numerical score (0-10 points), a text comments, and the publication date.
+3. **Review**: Represents a specific user's opinion on a specific book. It contains a numerical score (0-10 points), a text comments, and the publication date.
 4. **Collections**: Allows users to group books a custom label.
 
-**Relaciones entre entidades:**
+**Entity relationships:**
 - User - Review: An **User** can write multiple **Reviews**, but a **Review** belongs to only one **User** (1:N)
 - Book - Review: A **Book** can receive multiple **Reviews** from different **Users**, but a **Review** is linked to only one **Book** (1:N)
 - User - Collections: An **User** can create multiple **Collections**, but a **Collection** belong to only one **User** (1:N)
 - Collection - Book: One **Collection** can contains many **Books** and one **Book** can appear in many different **Collections** (N:M)
 
-### **Permisos de los Usuarios**
+### **User Permissions**
 Describir los permisos de cada tipo de usuario e indicar de qué entidades es dueño:
 
-* **Usuario Anónimo**: 
-  - Permisos: [Ej: Visualización de catálogo, búsqueda de productos, registro]
-  - No es dueño de ninguna entidad
+* **Anonymous User**: 
+  - Permissions: The anonymous user can browse the book catalog, use the search engine, view book details (such as author, page  number, ISBN, etc.), read public reviews from the community.
+  - They cannot interact, such as vote or comment. 
 
-* **Usuario Registrado**: 
-  - Permisos: [Ej: Gestión de perfil, realizar pedidos, crear valoraciones]
-  - Es dueño de: [Ej: Sus propios Pedidos, su Perfil de Usuario, sus Valoraciones]
+* **Registered User**: 
+  - Permissions: It shares all the anonymouse user features, plus:
 
-* **Administrador**: 
-  - Permisos: [Ej: Gestión completa de productos (CRUD), visualización de estadísticas, moderación de contenido]
-  - Es dueño de: [Ej: Productos, Categorías, puede gestionar todos los Pedidos y Usuarios]
+         · Can create, edit and delete their own reviews.
+         · Can create, manage and delete own collections.
+         · Has access to a public profile with reading statistics
+         · Can upload an avatar picture.
+         
 
-### **Imágenes**
+* **Administrator**: 
+  - Permissions: Has full control over the platform, is responsible for registiring new books in the system, can moderate content (such as deleting offensive reviews from any user), can manage users.
+
+### **Images**
 Indicar qué entidades tendrán asociadas una o varias imágenes:
 
-- **[Entidad con imágenes 1]**: [Ej: Usuario - Una imagen de avatar por usuario]
-- **[Entidad con imágenes 2]**: [Ej: Producto - Múltiples imágenes por producto (galería)]
-- **[Entidad con imágenes 3]**: [Ej: Categoría - Una imagen representativa por categoría]
+- **Book**: A book cover, managed by the administrator when registering a new work.
+- **User**: A user avatar. Registered users can upload and update their profile pictures.
 
-### **Gráficos**
-Indicar qué información se mostrará usando gráficos y de qué tipo serán:
+### **Charts**
 
-- **Gráfico 1**: [Ej: Ventas mensuales - Gráfico de barras]
-- **Gráfico 2**: [Ej: Productos más vendidos - Gráfico de tarta/circular]
-- **Gráfico 3**: [Ej: Evolución de usuarios registrados - Gráfico de líneas]
-- **Gráfico 4**: [Ej: Distribución de pedidos por categoría - Gráfico de barras horizontales]
+- **Reading activity**: A vertical bar chart showing the number of books read per month over the last year.
+- **Reviews chart**: An horizontal bar chart showing the numerical value that each user has put, and an average number calculated with all the reviews value.
 
 ### **Tecnología Complementaria**
 Indicar qué tecnología complementaria se empleará:
