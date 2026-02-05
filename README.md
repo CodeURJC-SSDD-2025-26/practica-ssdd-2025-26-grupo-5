@@ -1,4 +1,4 @@
-# BOOKLIFY
+# BOOKIFY
 
 ## 👥 Group Members
 | Fist name and Last name | URJC mail | GitHub User |
