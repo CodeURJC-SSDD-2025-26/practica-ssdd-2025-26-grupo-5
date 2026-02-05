@@ -9,7 +9,7 @@
 
 ---
 
-## 🎭 **Preparación: Definición del Proyecto**
+## 🎭 **Preparation: Project Definition**
 
 ### **Subject Description**
 It is a web application designed for the reading community. Its main goal is to allow users to keep a detailed record of their readings, rate books, and organize their personal library. The website acts as a social network to discover books based on community opinions and recommendation algorithms.
