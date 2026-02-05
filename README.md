@@ -1,6 +1,6 @@
-# [Nombre de la Aplicación]
+# BOOKLIFY
 
-## 👥 Group Menmbers
+## 👥 Group Members
 | Fist name and Last name | URJC mail | GitHub User |
 |:--- |:--- |:--- |
 | Mengying Xia Ruan | m.xia.2023@alumnos.urjc.es | Mengying04 |
