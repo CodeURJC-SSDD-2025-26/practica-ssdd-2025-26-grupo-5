@@ -1,0 +1,113 @@
+/* --- TUS ESTILOS BASE (Mantenidos) --- */
+body {
+    background-color: #f9f7f2;
+    font-family: 'Georgia', serif;
+}
+
+.navbar {
+    background-color: #f4f1ea;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.brand-color {
+    color: #382110;
+}
+
+/* --- MEJORA DE BARRA DE BÚSQUEDA --- */
+.search-custom {
+    background-color: #ede9df;
+    border: 1px solid #d8d8d8;
+    border-radius: 25px; /* Más redondeado y estético */
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.search-custom:focus {
+    background-color: #ffffff;
+    border-color: #382110;
+    box-shadow: 0 0 8px rgba(56, 33, 16, 0.2);
+    outline: none;
+}
+
+/* --- MEJORA DE PORTADAS (CUADRADAS Y SIN RECORTES) --- */
+.book-cover {
+    border: none;
+    transition:  0.5s;
+    background: none;
+    width: 75%;
+    /* Eliminado el max-width para que el grid mande */
+}
+
+.book-img-container {
+    width: 100%;
+    aspect-ratio: 2 / 3; /* Proporción estándar de libro */
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre el área sin deformar */
+    display: block;
+}
+
+.book-cover:hover {
+    transform: translateY(-5px);
+}
+
+/* --- SECCIÓN TOP LECTURAS --- */
+.top-reads-section {
+    background-color: #f4f1ea;
+    border: 3px solid #d8d8d8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-img-container-small {
+    width: 100px;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.8s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.book-img-container-small:hover {
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.book-img-small {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- TUS BOTONES Y FOOTER (Mantenidos) --- */
+.btn-custom {
+    background-color: #382110;
+    color: white;
+    border-radius: 20px;
+}
+
+.btn-custom:hover {
+    background-color: #5a3a22;
+    color: white;
+}
+
+.footer-section {
+    background-color: #3c2616;
+    color: white;
+}
+
+/* Auxiliar para que títulos largos no rompan la altura */
+.text-truncate {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
