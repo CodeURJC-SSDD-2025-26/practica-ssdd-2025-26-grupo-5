@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Mi Biblioteca </title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/myLibrary.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="navbar navbar-expand-lg sticky-top mb-4">
+  <div class="container">
+    <a class="navbar-brand fw-bold brand-color fst-italic" href="index.html">BOOKIFY</a>
+    <div class="d-flex flex-grow-1 mx-4">
+      <input class="form-control form-control-sm" type="search" placeholder="Buscar libros, autores..." aria-label="Search">
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"> <a class="nav-link" href="#">Perfil</a></li>
+        <li class="nav-item"> <a class="nav-link" href="myLibrary.html"> Mi Biblioteca</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#">Explorar</a></li>
+        <li class="nav-item"> <a class="nav-link" href="#">Ayuda</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<!-- End Hearder -->
+
+<main class="container my-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold brand-color">Mi Biblioteca</h2>
+    <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#nuevaColeccionModal">
+      + Añadir Libro
+    </button>
+  </div>
+
+  <div class="d-flex gap-2 mb-5 overflow-auto pb-2">
+    <button class="btn btn-dark rounded-pill px-4">Todos</button>
+    <button class="btn btn-outline-dark rounded-pill px-4">Favoritos</button>
+    <button class="btn btn-outline-dark rounded-pill px-4">Pendientes</button>
+    <button class="btn btn-outline-dark rounded-pill px-4">Leídos 2024</button>
+    <button class="btn btn-outline-dark rounded-pill px-4 fst-italic">+ Añadir filtro</button>
+  </div>
+
+  <h4 class="mb-4">Todos mis libros <span class="text-muted small">(12)</span></h4>
+  <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-4">
+    
+    <div class="col">
+  <div class="card h-100 border-0 shadow-sm book-card">
+    <a href="bookDescription.html">
+      <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546071216i/5907.jpg" class="card-img-top rounded" alt="Portada">
+    </a>
+    <div class="card-body p-2">
+      <h6 class="card-title mb-1 small fw-bold text-center">El Hobbit</h6>
+      
+      <div class="mt-2">
+        <div class="d-flex justify-content-between x-small mb-1">
+          <span class="text-muted">Progreso</span>
+          <span class="fw-bold">40 / 310 pág.</span>
+        </div>
+        <div class="progress" style="height: 8px;">
+          <div class="progress-bar custom-progress" role="progressbar" style="width: 13%;" aria-valuenow="13" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+</main>
+
+<div class="modal fade" id="nuevaColeccionModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Crear nueva colección</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control" placeholder="Nombre de la colección (ej: Clásicos)">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-custom">Crear</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer-section mt-5 py-4 ">
+  <div class="container text-center">
+    <p class="mb-2 fw-bold">Bookify</p>
+    <p class="small mb-2">Tu biblioteca digital personal</p>
+    <div class="mb-2 row-cols-auto">
+      <a href="#" class="footer-link">Sobre nosotros</a> |
+      <a href="#" class="footer-link">Contacto</a> |
+      <a href="pp.html" class="footer-link">Política de privacidad</a> |
+      <a href="ToS.html" class="footer-link">Términos de servicio</a>
+    </div>
+    <small>© 2026 Bookify. Todos los derechos reservados.</small>
+  </div>
+</footer>
+<!-- End Footer-->
+
+</body>
+</html>

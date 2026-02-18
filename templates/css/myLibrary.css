@@ -1,0 +1,20 @@
+/* Color marrón de tu marca para la barra de progreso */
+.custom-progress {
+    background-color: #382110 !important;
+}
+
+/* Estilo para el contenedor de la barra */
+.progress {
+    background-color: #e9ecef;
+    border-radius: 10px;
+}
+
+/* Texto muy pequeño para los contadores */
+.x-small {
+    font-size: 0.7rem;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
