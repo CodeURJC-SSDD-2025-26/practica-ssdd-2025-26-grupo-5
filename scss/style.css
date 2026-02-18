@@ -1,0 +1,88 @@
+body{
+    background-color: #f4f1ea;
+    color: #333;
+    font-family: 'Georgia', serif;
+}
+
+.navbar{
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid grey;
+}
+
+.navbar-brand{
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic !important;
+    color: black !important;
+    align-self: auto;
+   
+}
+.book-main{
+    border: 1px solid #ccc;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.book-main:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.book-img{
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.button{
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.button:hover{
+    background-color: #555;
+}
+
+
+
+.img-fluid {
+    width: 50px;      /* Ancho fijo */
+    height: auto;      /* Mantiene la proporción */
+    object-fit: contain; 
+    display: block;
+    margin: 0 auto;    /* Centra la imagen si es necesario */
+}
+
+/* Espaciado extra si lo necesitas */
+.row {
+    padding: 20px 0;
+}
+
+.footer-section {
+    background-color: #3c2616;
+    color: white;
+}
+
+.footer-link {
+    color: #f9f7f2;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+.footer-section small {
+    color: #999797;
+}
