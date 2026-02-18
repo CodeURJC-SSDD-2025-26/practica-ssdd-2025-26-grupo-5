@@ -1,15 +1,15 @@
-/* Color marrón de tu marca para la barra de progreso */
+/* Brown color in the progress bar */
 .custom-progress {
     background-color: #382110 !important;
 }
 
-/* Estilo para el contenedor de la barra */
+/* Style for the bar container */
 .progress {
     background-color: #e9ecef;
     border-radius: 10px;
 }
 
-/* Texto muy pequeño para los contadores */
+/* Very small text for counters */
 .x-small {
     font-size: 0.7rem;
 }
