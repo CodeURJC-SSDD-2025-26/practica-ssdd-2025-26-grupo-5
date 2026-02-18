@@ -1,0 +1,39 @@
+/* Archivo CSS de descripcionLibro.html*/
+
+.book-detail-cover img {
+    max-height: 500px;
+    transition: transform 0.3s ease;
+}
+
+.book-detail-cover img:hover {
+    transform: scale(1.02);
+}
+
+.book-info-box {
+    background-color: #f4f1ea;
+    border: 1px solid #d8d8d8;
+}
+
+/* Texto de la sinopsis */
+.lead {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Badge de puntuación */
+.badge {
+    font-size: 1rem;
+    padding: 8px 12px;
+}
+
+/* Fondo de comentario Blanco */
+.card {
+    background-color: #ffffff; 
+    border-radius: 12px;
+}
+
+hr {
+    border-top: 2px solid #d8d8d8;
+    opacity: 0.5;
+}
