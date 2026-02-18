@@ -61,9 +61,26 @@
           <span class="badge bg-success me-2">8.2 / 10</span>
           <span class="text-muted small">(1,240 reseñas)</span>
         </div>
-        <button class="btn btn-sm btn-custom px-3">
-          + Añadir a mi biblioteca
-        </button>
+        
+        
+        
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-sm btn-outline-danger px-3">
+             <i class="bi bi-file-earmark-pdf"></i> Descargar PDF
+          </a>
+
+        <div class="dropdown">
+          <button class="btn btn-sm btn-custom px-3 dropdown-toggle" type="button" id="addLibraryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            + Añadir a Biblioteca
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="addLibraryDropdown">
+            <li><a class="dropdown-item small" href="#">Favoritos</a></li>
+            <li><a class="dropdown-item small" href="#">Pendientes</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a href="myLibrary.html" class="dropdown-item small text-primary fw-bold">+ Crear nueva colección</a></li>
+          </ul>
+          </div>
+        </div>
       </div>
 
       <h5 class="fw-bold">Sinopsis</h5>
