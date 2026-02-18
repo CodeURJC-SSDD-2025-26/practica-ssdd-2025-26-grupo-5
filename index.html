@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MiniReads | Tu Biblioteca Personal</title>
+  <title>BOOKIFY | Tu Biblioteca Personal</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -58,51 +58,75 @@
     <!-- This section includes a grid of recommendated books which include book covers with images, titles, authors, and a "Quiero leerlo" button. There are 4 sample books.
     The idea is to change the recommendated books for each user that enters the platform-->
     <div class="row row-cols-1 row-cols-md-2 row-cols-md-3 row-cols-md-4 g-0">
+      
+      <!--El Hobbit-->
       <div class="col">
         <div class="card h-100 book-cover">
-          <div class="book-img-container"><img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546071216i/5907.jpg" class="card-img-top book-img" alt="Libro">
-          </div>
+          <a href="descripcionLibro.html">
+            <div class="book-img-container">
+              <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546071216i/5907.jpg" class="card-img-top book-img" alt="Libro">
+            </div>
+          </a>
           <div class="card-body px-0">
-            <h6 class="card-title fw-bold mb-1">El Hobbit</h6>
+            <a href="descripcionLibro.html" class="text-decoration-none text-dark">
+              <h6 class="card-title fw-bold mb-1">El Hobbit</h6>
+            </a>
             <p class="card-text small text-muted">J.R.R. Tolkien</p>
-            <button class="btn btn-sm btn-custom w-100">Quiero leerlo</button>
+            <a href="descripcionLibro.html" class="btn btn-sm btn-custom w-100">Quiero leerlo</a>
           </div>
         </div>
       </div>
 
+      <!--El Gran Gatsby-->
       <div class="col">
         <div class="card h-100 book-cover">
-          <div class="book-img-container"><img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1490528560i/4671.jpg" class="card-img-top book-img" alt="Libro">
-          </div>
+          <a href="descripcionLibro.html">
+            <div class="book-img-container">
+              <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1490528560i/4671.jpg" class="card-img-top book-img" alt="Libro">
+            </div>
+          </a>
           <div class="card-body px-0">
-            <h6 class="card-title fw-bold mb-1">El Gran Gatsby</h6>
+            <a href="descripcionLibro.html" class="text-decoration-none text-dark">
+              <h6 class="card-title fw-bold mb-1">El Gran Gatsby</h6>
+            </a>
             <p class="card-text small text-muted">F. Scott Fitzgerald</p>
-            <button class="btn btn-sm btn-custom w-100">Quiero leerlo</button>
+            <a href="descripcionLibro.html" class="btn btn-sm btn-custom w-100">Quiero leerlo</a>
           </div>
         </div>
       </div>
 
+      <!--Choque de Reyes-->
       <div class="col">
         <div class="card h-100 book-cover">
-          <div class="book-img-container"><img src="imgs/img2.jpg" class="card-img-top book-img" alt="Libro">
-          </div>
+          <a href="descripcionLibro.html">
+            <div class="book-img-container">
+              <img src="imgs/img2.jpg" class="card-img-top book-img" alt="Libro">
+            </div>
+          </a>
           <div class="card-body px-0">
-            <h6 class="card-title fw-bold mb-1">Choque de Reyes</h6>
+            <a href="descripcionLibro.html" class="text-decoration-none text-dark">
+              <h6 class="card-title fw-bold mb-1">Choque de Reyes</h6>
+            </a>
             <p class="card-text small text-muted">George R.R. Martin</p>
-            <button class="btn btn-sm btn-custom w-100">Quiero leerlo</button>
+            <a href="descripcionLibro.html" class="btn btn-sm btn-custom w-100">Quiero leerlo</a>
           </div>
         </div>
       </div>
 
+      <!--Don Quijote de la Mancha-->
       <div class="col">
         <div class="card h-100 book-cover">
-          <div class="book-img-container">
-            <img src="https://th.bing.com/th/id/OIP.7Q7dIsz9WkJ3nNT2hEGwbQHaLr?w=198&h=311&c=7&r=0&o=7&pid=1.7&rm=3" class="card-img-top book-img" alt="Libro">
-          </div>
+          <a href="descripcionLibro.html">
+            <div class="book-img-container">
+              <img src="https://th.bing.com/th/id/OIP.7Q7dIsz9WkJ3nNT2hEGwbQHaLr?w=198&h=311&c=7&r=0&o=7&pid=1.7&rm=3" class="card-img-top book-img" alt="Libro">
+            </div>
+          </a>
           <div class="card-body px-0">
-            <h6 class="card-title fw-bold mb-1">Don Quijote de la Mancha</h6>
+            <a href="descripcionLibro.html" class="text-decoration-none text-dark">
+              <h6 class="card-title fw-bold mb-1">Don Quijote de la Mancha</h6>
+            </a>  
             <p class="card-text small text-muted">Miguel de Cervantes</p>
-            <button class="btn btn-sm btn-custom w-100">Quiero leerlo</button>
+            <a href="descripcionLibro.html" class="btn btn-sm btn-custom w-100">Quiero leerlo</a>
           </div>
         </div>
       </div>
@@ -204,7 +228,7 @@
 <!-- Footer -->
 <footer class="footer-section mt-5 py-4 ">
   <div class="container text-center">
-    <p class="mb-2 fw-bold">MiniReads</p>
+    <p class="mb-2 fw-bold">Bookify</p>
     <p class="small mb-2">Tu biblioteca digital personal</p>
     <div class="mb-2 row-cols-auto">
       <a href="#" class="footer-link">Sobre nosotros</a> |
@@ -212,7 +236,7 @@
       <a href="pp.html" class="footer-link">Política de privacidad</a> |
       <a href="ToS.html" class="footer-link">Términos de servicio</a>
     </div>
-    <small>© 2026 MiniReads. Todos los derechos reservados.</small>
+    <small>© 2026 Bookify. Todos los derechos reservados.</small>
   </div>
 </footer>
 </body>
