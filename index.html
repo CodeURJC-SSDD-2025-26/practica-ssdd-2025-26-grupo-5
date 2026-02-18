@@ -1,82 +1,228 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BOOKIFY</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniReads | Tu Biblioteca Personal</title>
 
-        <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    </head>
+  <!-- Tu CSS externo -->
+  <link rel="stylesheet" href="/CSS/style.css">
+</head>
 
-    <body> 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <h1 class="navbar-brand fw-bold fs-3" style="font-style: italic;" href="#">BOOKIFY</h1>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">Inicio</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="#">Biblioteca</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">Explorar</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="#">Ayuda</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<body>
 
-        <div class="container my-5">
-        
-            <div class="row align-items-center mb-4">
-                <div class="col-md-6">
-                    <h2 class="navbar">Bienvenido a Bookify</h2>
-                    <p class="text-muted">Explora tu biblioteca, descubre nuevos mundos y comparte tu pasión por la lectura.</p>
-                </div>
+<!-- Header / Hero -->
+<header class="navbar navbar-expand-lg sticky-top mb-4">
+  <div class="container">
+    <a class="navbar-brand fw-bold brand-color fst-italic" href="index.html">BOOKIFY</a>
+    <div class="d-flex flex-grow-1 mx-4">
+      <input class="form-control form-control-sm" type="search" placeholder="Buscar libros, autores..." aria-label="Search">
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <div class="col-md-6 text-center">
-                <img src="images/image.png" class="img-fluid rounded shadow w-50 " alt="Libros">
-            </div>
-            </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"> <a class="nav-link" href="#">Perfil</a></li>
+        <li class="nav-item"> <a class="nav-link" href="#">Biblioteca</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#">Explorar</a></li>
+        <li class="nav-item"> <a class="nav-link" href="#">Ayuda</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container my-5">
+
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h2 class="welcoming-section">Bienvenido a Bookify</h2>
+      <p class="text-muted">Explora tu biblioteca, descubre nuevos mundos y comparte tu pasión por la lectura.</p>
+    </div>
+
+    <div class="col-md-6 text-center">
+      <img src="imgs/img1.jpeg" class="img-fluid rounded shadow" alt="Libros">
+    </div>
+  </div>
+</div>
+
+<section class="container mb-5">
+  <!-- Recommendations -->
+  <div class="col-md-12 ">
+    <h4 class="mb-4">Recomendaciones</h4>
+    <!-- This section includes a grid of recommendated books which include book covers with images, titles, authors, and a "Quiero leerlo" button. There are 4 sample books.
+    The idea is to change the recommendated books for each user that enters the platform-->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-md-3 row-cols-md-4 g-0">
+      <div class="col">
+        <div class="card h-100 book-cover">
+          <div class="book-img-container"><img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546071216i/5907.jpg" class="card-img-top book-img" alt="Libro">
+          </div>
+          <div class="card-body px-0">
+            <h6 class="card-title fw-bold mb-1">El Hobbit</h6>
+            <p class="card-text small text-muted">J.R.R. Tolkien</p>
+            <button class="btn btn-sm btn-custom w-100">Quiero leerlo</button>
+          </div>
         </div>
+      </div>
 
-        
-        
+      <div class="col">
+        <div class="card h-100 book-cover">
+          <div class="book-img-container"><img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1490528560i/4671.jpg" class="card-img-top book-img" alt="Libro">
+          </div>
+          <div class="card-body px-0">
+            <h6 class="card-title fw-bold mb-1">El Gran Gatsby</h6>
+            <p class="card-text small text-muted">F. Scott Fitzgerald</p>
+            <button class="btn btn-sm btn-custom w-100">Quiero leerlo</button>
+          </div>
+        </div>
+      </div>
 
+      <div class="col">
+        <div class="card h-100 book-cover">
+          <div class="book-img-container"><img src="imgs/img2.jpg" class="card-img-top book-img" alt="Libro">
+          </div>
+          <div class="card-body px-0">
+            <h6 class="card-title fw-bold mb-1">Choque de Reyes</h6>
+            <p class="card-text small text-muted">George R.R. Martin</p>
+            <button class="btn btn-sm btn-custom w-100">Quiero leerlo</button>
+          </div>
+        </div>
+      </div>
 
+      <div class="col">
+        <div class="card h-100 book-cover">
+          <div class="book-img-container">
+            <img src="https://th.bing.com/th/id/OIP.7Q7dIsz9WkJ3nNT2hEGwbQHaLr?w=198&h=311&c=7&r=0&o=7&pid=1.7&rm=3" class="card-img-top book-img" alt="Libro">
+          </div>
+          <div class="card-body px-0">
+            <h6 class="card-title fw-bold mb-1">Don Quijote de la Mancha</h6>
+            <p class="card-text small text-muted">Miguel de Cervantes</p>
+            <button class="btn btn-sm btn-custom w-100">Quiero leerlo</button>
+          </div>
+        </div>
+      </div>
 
+    </div>
+  </div>
+  <!-- Top read books -->
+  <div class="top-reads-section p-4 rounded shadow-sm mt-5">
+    <h4 class="mb-4 fw-bold">Libros Más Leídos</h4>
+    <!-- This section includes a horizontal list of the most read books on the platform. Each book is represented by its cover image and title.
+     There are 10 sample books.
+     Images are not of our property. They've been taken as a sample-->
+    <div class="row g-2">
 
+      <div class="col-auto">
+        <a href="#" class="text-decoration-none">
+          <div class="book-img-container-small">
+            <img src="https://static.fnac-static.com/multimedia/Images/ES/Comete/30437/CCP_IMG_ORIGINAL/426088.jpg" class="book-img-small" alt="La peninsula de las casas vacias">
+          </div>
+        </a>
+      </div>
 
+      <div class="col-auto">
+        <a href="#" class="text-decoration-none">
+          <div class="book-img-container-small">
+            <img src="https://static.fnac-static.com/multimedia/Images/ES/Comete/32718/CCP_IMG_ORIGINAL/458022.jpg" class="book-img-small" alt="Mision en Paris">
+          </div>
+        </a>
+      </div>
 
+      <div class="col-auto">
+        <a href="#" class="text-decoration-none">
+          <div class="book-img-container-small">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1655988385i/40121378.jpg" class="book-img-small" alt="Matar a un Ruiseñor">
+          </div>
+        </a>
+      </div>
 
+      <div class="col-auto">
+        <a href="#" class="text-decoration-none">
+          <div class="book-img-container-small">
+            <img src="https://static.fnac-static.com/multimedia/Images/ES/Comete/33719/CCP_IMG_ORIGINAL/472036.jpg" class="book-img-small" alt="El Señor de los Anillos">
+          </div>
+        </a>
+      </div>
 
+      <div class="col-auto">
+        <a href="#" class="text-decoration-none">
+          <div class="book-img-container-small">
+            <img src="https://static.fnac-static.com/multimedia/Images/ES/Comete/33385/CCP_IMG_ORIGINAL/467360.jpg" class="book-img-small" alt="Jane Eyre">
+          </div>
+        </a>
+      </div>
 
+      <div class="col-auto">
+        <a href="#" class="text-decoration-none">
+          <div class="book-img-container-small">
+            <img src="https://imagessl3.casadellibro.com/a/l/s5/83/9788491294283.webp" class="book-img-small" alt="Cumbres Borrascosas">
+          </div>
+        </a>
+      </div>
 
+      <div class="col-auto">
+        <a href="#" class="text-decoration-none">
+          <div class="book-img-container-small">
+            <img src="https://imagessl1.casadellibro.com/a/l/s5/01/9788466682701.webp" class="book-img-small" alt="El Hobbit">
+          </div>
+        </a>
+      </div>
 
-        <!-- Footer -->
-        <footer class="footer-section mt-5 py-4">
-            <div class="container text-center">
-                <p class="mb-2 fw-bold">MiniReads</p>
-                <p class="small mb-2">Tu biblioteca digital personal</p>
-                <div class="mb-2">
-                    <a href="#" class="footer-link">Sobre nosotros</a> |
-                    <a href="#" class="footer-link">Contacto</a> |
-                    <a href="#" class="footer-link">Política de privacidad</a>
-                </div>
-                <small>© 2026 MiniReads. Todos los derechos reservados.</small>
-            </div>
-        </footer>
+      <div class="col-auto">
+        <a href="#" class="text-decoration-none">
+          <div class="book-img-container-small">
+            <img src="https://imagessl2.casadellibro.com/a/l/s5/92/9788408299592.webp" class="book-img-small" alt="El Gran Gatsby">
+          </div>
+        </a>
+      </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-        <script>
-            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-                return new bootstrap.Tooltip(tooltipTriggerEl)
-            })
-        </script>    
-    </body>
+      <div class="col-auto">
+        <a href="https://www.casadellibro.com/libro-el-hombre-en-busca-de-sentido/9788425432026/2742385" class="text-decoration-none">
+          <div class="book-img-container-small">
+            <img src="https://imagessl6.casadellibro.com/a/l/s5/26/9788425432026.webp" class="book-img-small" alt="Cien años de soledad">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-auto">
+        <a href="#" class="text-decoration-none">
+          <div class="book-img-container-small">
+            <img src="https://imagessl0.casadellibro.com/a/l/s5/90/9788491299790.webp" class="book-img-small" alt="El Conde de Montecristo">
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer-section mt-5 py-4 ">
+  <div class="container text-center">
+    <p class="mb-2 fw-bold">MiniReads</p>
+    <p class="small mb-2">Tu biblioteca digital personal</p>
+    <div class="mb-2 row-cols-auto">
+      <a href="#" class="footer-link">Sobre nosotros</a> |
+      <a href="#" class="footer-link">Contacto</a> |
+      <a href="pp.html" class="footer-link">Política de privacidad</a> |
+      <a href="ToS.html" class="footer-link">Términos de servicio</a>
+    </div>
+    <small>© 2026 MiniReads. Todos los derechos reservados.</small>
+  </div>
+</footer>
+</body>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script>
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+</script>
 </html>
