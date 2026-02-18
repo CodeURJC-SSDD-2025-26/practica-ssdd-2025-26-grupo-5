@@ -1,4 +1,4 @@
-/* Archivo CSS de descripcionLibro.html*/
+/* CSS of descripcionLibro.html*/
 
 .book-detail-cover img {
     max-height: 500px;
@@ -14,20 +14,20 @@
     border: 1px solid #d8d8d8;
 }
 
-/* Texto de la sinopsis */
+/* Synopsis Text */
 .lead {
     font-family: 'Roboto', sans-serif;
     line-height: 1.8;
     text-align: justify;
 }
 
-/* Badge de puntuación */
+/* Score badge */
 .badge {
     font-size: 1rem;
     padding: 8px 12px;
 }
 
-/* Fondo de comentario Blanco */
+/* White comment background */
 .card {
     background-color: #ffffff; 
     border-radius: 12px;
