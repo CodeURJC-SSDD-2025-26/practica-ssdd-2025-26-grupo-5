@@ -97,6 +97,17 @@ body {
     background-color: #3c2616;
     color: white;
 }
+.footer-links {
+    color: #d8d8d8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    text-emphasis: initial;
+    
+}
+.footer-links:hover {
+    color: #f4f1ea;
+    text-decoration: underline;
+}
 
 /* Helpful to prevent long titles from breaking the height */
 .text-truncate {
