@@ -1,0 +1,20 @@
+/* Brown color in the progress bar */
+.custom-progress {
+    background-color: #382110 !important;
+}
+
+/* Style for the bar container */
+.progress {
+    background-color: #e9ecef;
+    border-radius: 10px;
+}
+
+/* Very small text for counters */
+.x-small {
+    font-size: 0.7rem;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}

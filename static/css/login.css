@@ -1,0 +1,65 @@
+.login-title {
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    font-weight: bold;
+    color: #382110;
+}
+
+.title-link {
+    text-decoration: none;
+    color: #382110;
+}
+
+.title-link:hover {
+    color: #382110;
+    text-decoration: none;
+}
+
+.login-box {
+    background-color: white;
+    padding: 50px 40px;
+    border-radius: 50px;
+    width: 600px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.input-group-custom {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.input-group-custom label {
+    width: 100px;
+    font-weight: bold;
+    color: #382110;
+}
+
+.input-group-custom input {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.input-group-custom input:focus {
+    border-color: #382110;
+}
+
+.create-account {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: underline;
+    color: #382110;
+    font-weight: 500;
+}
+
+.create-account:hover {
+    color: #5a3a22;
+}
+
+.login-button-wrapper {
+    margin-top: 30px;
+}

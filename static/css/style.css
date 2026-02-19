@@ -1,4 +1,3 @@
-/* --- TUS ESTILOS BASE (Mantenidos) --- */
 body {
     background-color: #f9f7f2;
     font-family: 'Georgia', serif;
@@ -13,11 +12,10 @@ body {
     color: #382110;
 }
 
-/* --- MEJORA DE BARRA DE BÚSQUEDA --- */
 .search-custom {
     background-color: #ede9df;
     border: 1px solid #d8d8d8;
-    border-radius: 25px; /* Más redondeado y estético */
+    border-radius: 25px;
     padding: 8px 20px;
     font-size: 0.9rem;
     transition: all 0.3s ease;
@@ -30,18 +28,16 @@ body {
     outline: none;
 }
 
-/* --- MEJORA DE PORTADAS (CUADRADAS Y SIN RECORTES) --- */
 .book-cover {
     border: none;
     transition:  0.5s;
     background: none;
     width: 75%;
-    /* Eliminado el max-width para que el grid mande */
 }
 
 .book-img-container {
     width: 100%;
-    aspect-ratio: 2 / 3; /* Proporción estándar de libro */
+    aspect-ratio: 2 / 3; 
     overflow: hidden;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -50,7 +46,7 @@ body {
 .book-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cubre el área sin deformar */
+    object-fit: cover;
     display: block;
 }
 
@@ -58,7 +54,6 @@ body {
     transform: translateY(-5px);
 }
 
-/* --- SECCIÓN TOP LECTURAS --- */
 .top-reads-section {
     background-color: #f4f1ea;
     border: 3px solid #d8d8d8;
@@ -87,7 +82,6 @@ body {
     display: block;
 }
 
-/* --- TUS BOTONES Y FOOTER (Mantenidos) --- */
 .btn-custom {
     background-color: #382110;
     color: white;
@@ -104,7 +98,7 @@ body {
     color: white;
 }
 
-/* Auxiliar para que títulos largos no rompan la altura */
+/* Helpful to prevent long titles from breaking the height */
 .text-truncate {
     display: block;
     white-space: nowrap;
