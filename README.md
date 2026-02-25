@@ -105,7 +105,7 @@ Diagrama que muestra cómo se navega entre las diferentes páginas de la aplicac
 
 | Nº    | Commits      | Files      |
 |:------------: |:------------:| :------------:|
-|1| [Descripción commit 1](URL_commit_1)  | [Archivo1](URL_archivo_1)   |
+|1| [Implemented the index.html, where you can see the main web page, as an introduction to the web.](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/cfde8dfc8a6f5e1e56865e4c0b9f29968d7287cd)  | [index.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/index.html)   |
 |2| [Descripción commit 2](URL_commit_2)  | [Archivo2](URL_archivo_2)   |
 |3| [Descripción commit 3](URL_commit_3)  | [Archivo3](URL_archivo_3)   |
 |4| [Descripción commit 4](URL_commit_4)  | [Archivo4](URL_archivo_4)   |
