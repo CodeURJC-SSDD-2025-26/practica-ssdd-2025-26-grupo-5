@@ -101,15 +101,13 @@ Diagrama que muestra cómo se navega entre las diferentes páginas de la aplicac
 
 #### **Alumno 2 - Jonás Aquiles Huertes Ramírez**
 
-My job was the development and web design of the BOOKIFY application, implementing the main pages (index.html and profile.html) with responsive design using Bootstrap and creating the CSS stylesheets (style.css and profile.css) that define the platform's visual identity.
+My job was the development and web design of the BOOKIFY application, implementing the main pages (index.html and profile.html) with responsive design using Bootstrap and creating the CSS stylesheets (style.css and profile.css) that define the platform's visual identity. Also, I've done the ToS page and Privacy Politics page.
 
 | Nº    | Commits      | Files      |
 |:------------: |:------------:| :------------:|
 |1| [Implemented the index.html, where you can see the main web page, as an introduction to the web.](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/cfde8dfc8a6f5e1e56865e4c0b9f29968d7287cd)  | [index.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/index.html)   |
-|2| [Add styles, images, and update HTML structure for Bookify
-](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/31141b375442edadb2b9dfad0851667fb59c59c0)  | [index.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/index.html)   |
-|3| [Add profile page with personal information and styling; include profile image and update navbar links
-](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/17a9d873756bac0334863fc99d2c4a2975bc78c1)  | [profile.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/profile.html)   |
+|2| [Add styles, images, and update HTML structure for Bookify](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/31141b375442edadb2b9dfad0851667fb59c59c0)  | [index.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/index.html)   |
+|3| [Add profile page with personal information and styling; include profile image and update navbar links](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/17a9d873756bac0334863fc99d2c4a2975bc78c1)  | [profile.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/profile.html)   |
 |4| [Descripción commit 4](URL_commit_4)  | [Archivo4](URL_archivo_4)   |
 |5| [Descripción commit 5](URL_commit_5)  | [Archivo5](URL_archivo_5)   |
 
