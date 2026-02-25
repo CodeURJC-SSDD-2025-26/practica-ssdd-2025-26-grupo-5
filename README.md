@@ -108,8 +108,8 @@ My job was the development and web design of the BOOKIFY application, implementi
 |1| [Implemented the index.html, where you can see the main web page, as an introduction to the web.](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/cfde8dfc8a6f5e1e56865e4c0b9f29968d7287cd)  | [index.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/index.html)   |
 |2| [Add styles, images, and update HTML structure for Bookify](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/31141b375442edadb2b9dfad0851667fb59c59c0)  | [index.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/index.html)   |
 |3| [Add profile page with personal information and styling; include profile image and update navbar links](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/17a9d873756bac0334863fc99d2c4a2975bc78c1)  | [profile.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/profile.html)   |
-|4| [Descripción commit 4](URL_commit_4)  | [Archivo4](URL_archivo_4)   |
-|5| [Descripción commit 5](URL_commit_5)  | [Archivo5](URL_archivo_5)   |
+|4| [Added Privacy Policy page where there's a short text that explains how we work in terms of privacy](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/4703e66021f4e3a17784d0d3e3c51d3259f471d0)  | [pp.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/pp.html)   |
+|5| [Added Terms of Service page where there's a text that explains how we work and what is the service we provide](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/4703e66021f4e3a17784d0d3e3c51d3259f471d0)  | [ToS.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/ToS.html)   |
 
 ---
 
