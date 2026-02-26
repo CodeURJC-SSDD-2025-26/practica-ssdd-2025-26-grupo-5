@@ -101,7 +101,7 @@ Diagrama que muestra cómo se navega entre las diferentes páginas de la aplicac
 
 #### **Alumno 2 - Jonás Aquiles Huertes Ramírez**
 
-My job was the development and web design of the BOOKIFY application, implementing the main pages (index.html and profile.html) with responsive design using Bootstrap and creating the CSS stylesheets (style.css and profile.css) that define the platform's visual identity. Also, I've done the ToS page and Privacy Politics page.
+My job was the development and web design of the BOOKIFY application, implementing the main pages (index.html and profile.html) with responsive design using Bootstrap and creating the CSS stylesheets (style.css and profile.css) that define the platform's visual identity. Also, I've done the ToS page and Privacy Policy page.
 
 | Nº    | Commits      | Files      |
 |:------------: |:------------:| :------------:|
