@@ -17,7 +17,7 @@ new Chart(document.getElementById('reviewsChart').getContext('2d'), {
     },
     options: {
         ...baseChartOptions,
-        indexAxis: 'y', // <- lo único exclusivo de esta gráfica
+        indexAxis: 'y',
         plugins: {
             ...baseChartOptions.plugins,
             title: {

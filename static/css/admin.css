@@ -1,3 +1,8 @@
+/* Navigation / TABS */
+.navbar {
+    padding-bottom: 0 !important;
+}
+
 .nav-tabs .nav-link {
     border: none;
     color: #5a3a22;
@@ -19,8 +24,9 @@
     margin-bottom: -1px;
 }
 
-.navbar {
-    padding-bottom: 0 !important;
+/* Tables */
+.table-fixed {
+    table-layout: fixed;
 }
 
 .table thead {
@@ -34,7 +40,45 @@
     font-weight: 500;
 }
 
-/* User Cards */
+.table td,
+.table th {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 0;
+}
+
+/* Columns size - books table */
+.col-portada    { width: 80px; }
+.col-titulo     { width: 25%; cursor: pointer; }
+.col-autor      { width: 20%; cursor: pointer; }
+.col-genero     { width: 15%; cursor: pointer; }
+.col-isbn       { width: 15%; }
+.col-acciones   { width: 15%; }
+
+/* Columns size - reviews table */
+.col-estado     { width: 15%; }
+.col-usuario    { width: 20%; }
+.col-libro      { width: 20%; }
+.col-comentario { width: 30%; }
+
+/* Book cover image */
+.img-portada {
+    width: 45px;
+    height: 65px;
+    object-fit: cover;
+}
+
+/* User cards */
+.user-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
 .user-avatar-container {
     width: 55px;
     height: 55px;
@@ -50,18 +94,23 @@
     object-fit: cover;
 }
 
-.user-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Modal */
+.modal-header-custom,
+.modal-body-custom {
+    background-color: #f4f1ea;
 }
 
-.user-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+/* Forms */
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
 }
 
-.table td, .table th {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 0;
+.search-input-group {
+    max-width: 500px;
+}
+
+/* Sortable columns */
+th[onclick] {
+    cursor: pointer;
 }
