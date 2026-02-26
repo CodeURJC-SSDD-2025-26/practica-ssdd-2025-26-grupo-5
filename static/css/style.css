@@ -11,6 +11,11 @@ body {
 .brand-color {
     color: #382110;
 }
+.welcome-section {
+    background-color: #f4f1ea;
+    border: 3px solid #d8d8d8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
 .search-custom {
     background-color: #ede9df;
