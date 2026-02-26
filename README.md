@@ -87,10 +87,10 @@ Diagrama que muestra cómo se navega entre las diferentes páginas de la aplicac
 
 #### **Alumno 1 - Mengying Xia Ruan**
 
-[Descripción de las tareas y responsabilidades principales del alumno en el proyecto]
+I was responsible for developing the templates for the Book Description, My Library, and Admin sections, including their respective CSS and logic. My work involved building the structure and styling of these modules while implementing key features such as interactive modals for collections, dynamic data visualization via charts, and a real-time progress bar system. I also added several JavaScript functionalities to improve the user experience, like the star rating system and a script to sort tables alphabetically.
 
 | Nº | Commits | Files |
-|:---:|:---|:---|
+|:---:|:---:|:---:|
 | 1 | [Creation and initial structure of the bookDescription.html, bookDescription.css, and reviews.js files](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/9a6b338505d5798434a661dc49ba9c976d307679) | [bookDescription.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/bookDescription.html) <br> [bookDescription.css](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/css/bookDescription.css) |
 | 2 | [Creation and initial structure of the myLibrary.html and myLibrary.css files](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/f8039aad8bfa27af9390360d7d2009be09d92250) | [myLibrary.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/myLibrary.html) <br> [myLibrary.css](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/css/myLibrary.css) |
 | 3 | [Creating a modal to create a new collection in the bookDescription file](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/101712d3d03f80b8f4c86d59b92259e9c07cee73) | [bookDescription.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/bookDescription.html) |
