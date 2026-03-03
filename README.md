@@ -103,8 +103,10 @@ Diagrama que muestra cómo se navega entre las diferentes páginas de la aplicac
 > Administration panel page, accessible only to users with an administrator role. Includes sections to manage books, users, and reviews.
 ##### **7.1 Admin Panel Page**
 ![Admin Panel page](static/imgs/navigation_imgs/admin1.png)
-> Book management section, where the administrator can add, edit, or delete books from the catalog. Includes a form to enter book details and a table with the list of registered books.
 ![Admin Panel page](static/imgs/navigation_imgs/register-book.png)
+
+> Book management section, where the administrator can add, edit, or delete books from the catalog. Includes a form to enter book details and a table with the list of registered books.
+
 ##### **7.2 Admin Panel Page**
 ![Admin Panel page](static/imgs/navigation_imgs/admin2.png)
 > Review management section, where the administrator can moderate reviews posted by users, deleting those that are inappropriate or violate platform policies. Includes a list of reviews and action options for each.
