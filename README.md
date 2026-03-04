@@ -163,15 +163,14 @@ My job was the development and web design of the BOOKIFY application, implementi
 
 #### **Student 3 - Adrián Aranda Martínez**
 
-[Descripción de las tareas y responsabilidades principales del alumno en el proyecto]
+My job was the development of the BOOKIFY login and register pages (login.html and signUp.html) using Bootstrap and their respective css stylesheet (login.css). Also I've done the contact page and the about us page (aboutUs.html and contact.html) with the changes in the css file (style.css).
 
 | Nº    | Commits      | Files      |
 |:------------: |:------------:| :------------:|
-|1| [Descripción commit 1](URL_commit_1)  | [Archivo1](URL_archivo_1)   |
-|2| [Descripción commit 2](URL_commit_2)  | [Archivo2](URL_archivo_2)   |
-|3| [Descripción commit 3](URL_commit_3)  | [Archivo3](URL_archivo_3)   |
-|4| [Descripción commit 4](URL_commit_4)  | [Archivo4](URL_archivo_4)   |
-|5| [Descripción commit 5](URL_commit_5)  | [Archivo5](URL_archivo_5)   |
+|1| [Implemented the login page](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/910767aa94ea7d4e3a9c0fc739b43144f982ac5b)  | [login.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/login.html)   |
+|2| [Implemented the register page]([URL_commit_2](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/910767aa94ea7d4e3a9c0fc739b43144f982ac5b))  | [signUp.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/signUp.html)   |
+|3| [Added the about us page]([URL_commit_3](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/27c5b33abdd7ebe64dec0ea744a03b874154e083))  | [aboutUs.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/aboutUs.html)   |
+|4| [Added the contact page](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/27c5b33abdd7ebe64dec0ea744a03b874154e083)  | [contact.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/contact.html)   |
 
 ---
 
