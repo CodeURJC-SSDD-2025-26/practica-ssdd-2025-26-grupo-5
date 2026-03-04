@@ -72,8 +72,6 @@ This diagram shows how to navigate between the different pages of the applicatio
 
 ![Navegation Diagram](static/imgs/navigation_imgs/navegationDiagram.png)
 
-> [Descripción opcional del flujo de navegación: Ej: "El usuario puede acceder desde la página principal a todas las secciones mediante el menú de navegación. Los usuarios anónimos solo tienen acceso a las páginas públicas, mientras que los registrados pueden acceder a su perfil y panel de usuario."]
-
 ### **Screenshots and Page Descriptions**
 
 #### **1. Main page / Home**
