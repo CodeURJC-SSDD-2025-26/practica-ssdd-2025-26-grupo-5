@@ -168,8 +168,8 @@ My job was the development of the BOOKIFY login and register pages (login.html a
 | Nº    | Commits      | Files      |
 |:------------: |:------------:| :------------:|
 |1| [Implemented the login page](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/910767aa94ea7d4e3a9c0fc739b43144f982ac5b)  | [login.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/login.html)   |
-|2| [Implemented the register page]([URL_commit_2](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/910767aa94ea7d4e3a9c0fc739b43144f982ac5b))  | [signUp.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/signUp.html)   |
-|3| [Added the about us page]([URL_commit_3](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/27c5b33abdd7ebe64dec0ea744a03b874154e083))  | [aboutUs.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/aboutUs.html)   |
+|2| [Implemented the register page]([https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/910767aa94ea7d4e3a9c0fc739b43144f982ac5b])  | [signUp.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/signUp.html)   |
+|3| [Added the about us page]([https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/27c5b33abdd7ebe64dec0ea744a03b874154e083])  | [aboutUs.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/aboutUs.html)   |
 |4| [Added the contact page](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/27c5b33abdd7ebe64dec0ea744a03b874154e083)  | [contact.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/contact.html)   |
 
 ---
