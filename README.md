@@ -65,16 +65,16 @@ The application manages four main entities, all interrelated:
 
 ---
 
-## 🛠 **Práctica 1: Maquetación de páginas web con HTML y CSS**
+## 🛠 **Practice 1: Web page layout with HTML and CSS**
 
-### **Diagrama de Navegación**
-Diagrama que muestra cómo se navega entre las diferentes páginas de la aplicación:
+### **Navigation Diagram**
+This diagram shows how to navigate between the different pages of the application:
 
 ![Diagrama de Navegación](images/navigation-diagram.png)
 
 > [Descripción opcional del flujo de navegación: Ej: "El usuario puede acceder desde la página principal a todas las secciones mediante el menú de navegación. Los usuarios anónimos solo tienen acceso a las páginas públicas, mientras que los registrados pueden acceder a su perfil y panel de usuario."]
 
-### **Capturas de Pantalla y Descripción de Páginas**
+### **Screenshots and Page Descriptions**
 
 #### **1. Main page / Home**
 ![Página Principal](static/imgs/navigation_imgs/welcome-main.png)
@@ -131,9 +131,9 @@ Diagrama que muestra cómo se navega entre las diferentes páginas de la aplicac
 
 
 
-### **Participación de Miembros en la Práctica 1**
+### **Member Participation in Practice 1**
 
-#### **Alumno 1 - Mengying Xia Ruan**
+#### **Student 1 - Mengying Xia Ruan**
 
 I was responsible for developing the templates for the Book Description, My Library, and Admin sections, including their respective CSS and logic. My work involved building the structure and styling of these modules while implementing key features such as interactive modals for collections, dynamic data visualization via charts, and a real-time progress bar system. I also added several JavaScript functionalities to improve the user experience, like the star rating system and a script to sort tables alphabetically.
 
@@ -143,11 +143,11 @@ I was responsible for developing the templates for the Book Description, My Libr
 | 2 | [Creation and initial structure of the myLibrary.html and myLibrary.css files](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/f8039aad8bfa27af9390360d7d2009be09d92250) | [myLibrary.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/myLibrary.html) <br> [myLibrary.css](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/css/myLibrary.css) |
 | 3 | [Creating a modal to create a new collection in the bookDescription file](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/101712d3d03f80b8f4c86d59b92259e9c07cee73) | [bookDescription.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/bookDescription.html) |
 | 4 | [Creation of the admin.html and admin.css files. Creation of a general .js file to handle all the charts.](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/e885385460d47ed63fbd3f6c3f13b80cab656702) | [admin.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/admin.html) <br> [admin.css](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/css/admin.css) <br> [charts.js](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/js/charts.js) |
-| 5 | [Updated the comment section, book editing, hyperlinks and JS files for sorting and progress bar](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/0e06b6f0e8830a6bd89ced2e5c06f8fe158dea55) | [bookDescription.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/bookDescription.html) <br> [admin.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/admin.html) <br> [admin.js](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/js/admin.js) <br> [bookProgress.js](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/js/bookProgress.js) <br> [starRating.js](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/js/reviewsStarRating.js) |
+| 5 | [Updated the comment section, book editing, hyperlinks and JS files for sorting and progress bar](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/0e06b6f0e8830a6bd89ced2e5c06f8fe158dea55) | [bookDescription.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/bookDescription.html) <br> [admin.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/admin.html) <br> [admin.js](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/js/admin.js) <br> [bookProgress.js](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/js/bookProgress.js) <br> [tarRating.js](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/js/reviewsStarRating.js) |
 
 ---
 
-#### **Alumno 2 - Jonás Aquiles Huertes Ramírez**
+#### **Student 2 - Jonás Aquiles Huertes Ramírez**
 
 My job was the development and web design of the BOOKIFY application, implementing the main pages (index.html and profile.html) with responsive design using Bootstrap and creating the CSS stylesheets (style.css and profile.css) that define the platform's visual identity. Also, I've done the ToS page and Privacy Policy page.
 
@@ -161,7 +161,7 @@ My job was the development and web design of the BOOKIFY application, implementi
 
 ---
 
-#### **Alumno 3 - Adrián Aranda Martínez**
+#### **Student 3 - Adrián Aranda Martínez**
 
 [Descripción de las tareas y responsabilidades principales del alumno en el proyecto]
 
