@@ -19,7 +19,7 @@ The application manages four main entities, all interrelated:
 
 1. **User**: Represents the people registered on the platform. It store credentials, biography, avatar, and preferences.
 2. **Book**: The central entity. It contins technical details (title, author, ISBN, synopsis, genre) and the cover image.
-3. **Review**: Represents a specific user's opinion on a specific book. It contains a numerical score (0-10 points), a text comments, and the publication date.
+3. **Review**: Represents a specific user's opinion on a specific book. It contains a numerical score (1-10 stars), a text comments, and the publication date.
 4. **Collections**: Allows users to group books a custom label.
 
 **Entity relationships:**
