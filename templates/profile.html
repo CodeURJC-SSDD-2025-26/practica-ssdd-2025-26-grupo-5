@@ -40,9 +40,9 @@
             <h2 class="fw-bold brand-color">Juan García</h2>
             <p class="text-muted">Amante de la lectura | Madrid, España</p>
             <p class="small">Miembro desde Enero 2024</p>
-            <button class="btn btn-custom btn-sm me-2">Editar Perfil</button>
+            <button class="btn btn-custom btn-sm me-2" data-bs-toggle="modal" data-bs-target="#editProfileModal">Editar Perfil</button>
             <div class="mb-5 allign-items-center"></div>
-            <button class="btn btn-custom btn-outline-secondary btn-sm me-2">Cerrar Sesión</button>
+            <a href="login.html" class="btn btn-custom btn-outline-secondary btn-sm me-2">Cerrar Sesión</a>
         </div>
         <!-- Personal info such as email, phone number, born date and favorite genres-->
         <div class="col-md-8">
@@ -97,7 +97,7 @@
 <section class="container mb-5">
   <div class="card border-0 shadow-sm p-4">
     <h5 class="fw-bold brand-color mb-4">Estadísticas de Lectura</h5>
-    <div style="width: 50%; margin: auto; height:45vh">
+    <div class="chart-wrapper">
         <canvas id="graficaLectura"></canvas>
     </div>
     </div>
@@ -118,6 +118,72 @@
   </div>
 </footer>
 <!-- End Footer -->
+
+<!-- Edit Profile Modal -->
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content border-0">
+      <div class="modal-header border-0 pb-0 modal-header-custom">
+        <h5 class="modal-title fw-bold brand-color" id="editProfileModalLabel">Editar Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4 modal-body-custom">
+        <div class="card border-0 shadow-sm p-4">
+          <form class="row g-3">
+            <div class="col-md-12 text-center mb-2">
+              <img src="../static/imgs/imgprf.webp" class="rounded-circle shadow mb-2" alt="Foto de perfil" width="100" height="100">
+              <div>
+                <label class="form-label small fw-bold d-block">Foto de perfil</label>
+                <input type="file" class="form-control form-control-sm w-auto mx-auto" accept="image/*">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">Nombre de usuario</label>
+              <input type="text" class="form-control" placeholder="Juan García">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">Correo Electrónico</label>
+              <input type="email" class="form-control" placeholder="juan.garcia@email.com">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">Teléfono</label>
+              <input type="tel" class="form-control" placeholder="+34 612 345 678">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">Fecha de Nacimiento</label>
+              <input type="date" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">Ubicación</label>
+              <input type="text" class="form-control" placeholder="Madrid, España">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">Género Favorito</label>
+              <input type="text" class="form-control" placeholder="Fantasía, Ciencia Ficción">
+            </div>
+            <div class="col-md-12">
+              <label class="form-label small fw-bold">Biografía</label>
+              <textarea class="form-control" rows="3" placeholder="Cuéntanos algo sobre ti..."></textarea>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">Nueva Contraseña</label>
+              <input type="password" class="form-control" placeholder="Dejar en blanco para no cambiar">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">Confirmar Contraseña</label>
+              <input type="password" class="form-control" placeholder="Repetir nueva contraseña">
+            </div>
+            <div class="col-12 d-flex justify-content-end gap-2 mt-3">
+              <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-custom px-5">Guardar Cambios</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Edit Profile Modal -->
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

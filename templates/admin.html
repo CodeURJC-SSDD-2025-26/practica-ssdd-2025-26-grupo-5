@@ -67,7 +67,7 @@
         <h5 class="fw-bold">Gestión de Catálogo</h5>
         <div class="d-flex gap-3 align-items-center">
           <span class="badge rounded-pill bg-dark">Total de Libros: 167</span>
-          <button class="btn btn-custom px-4" data-bs-toggle="modal" data-bs-target="#bookModal">
+          <button class="btn btn-custom px-4" data-bs-toggle="modal" data-bs-target="#bookModal" data-mode="add">
             <i class="bi bi-plus-lg me-1"></i> Añadir Libro
           </button>
         </div>
@@ -89,9 +89,9 @@
             <thead>
               <tr class="small text-uppercase">
                 <th class="ps-4 col-portada">Portada</th>
-                <th class="col-titulo" onclick="sortTable(1, '#books')">TÍTULO <i class="bi bi-sort-alpha-down"></i></th>
-                <th class="col-autor" onclick="sortTable(2, '#books')">AUTOR <i class="bi bi-sort-alpha-down"></i></th>
-                <th class="col-genero" onclick="sortTable(3, '#books')">GÉNERO <i class="bi bi-sort-alpha-down"></i></th>
+                <th class="col-titulo" id="sort-title">TÍTULO <i class="bi bi-sort-alpha-down"></i></th>
+                <th class="col-autor" id="sort-author">AUTOR <i class="bi bi-sort-alpha-down"></i></th>
+                <th class="col-genero" id="sort-genre">GÉNERO <i class="bi bi-sort-alpha-down"></i></th>
                 <th class="col-isbn">ISBN</th>
                 <th class="col-acciones text-end pe-4">ACCIONES</th>
               </tr>
@@ -108,7 +108,7 @@
                 <td><span class="badge bg-light text-dark border">Tragedia</span></td>
                 <td class="small text-muted">9783257691078</td>
                 <td class="text-end pe-4">
-                  <button class="btn btn-sm btn-outline-secondary border-0 me-1" data-bs-toggle="modal" data-bs-target="#bookModal" title="Editar"><i class="bi bi-pencil-square"></i></button>
+                  <button class="btn btn-sm btn-outline-secondary border-0 me-1" data-bs-toggle="modal" data-bs-target="#bookModal" data-mode="edit" title="Editar"><i class="bi bi-pencil-square"></i></button>
                   <button class="btn btn-sm btn-outline-danger border-0" title="Eliminar"><i class="bi bi-trash-fill"></i></button>
                 </td>
               </tr>
@@ -133,7 +133,7 @@
       </div>
     </div>
 
-    <!-- Modal Libro -->
+    <!-- Book Modal -->
     <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content border-0">
@@ -147,7 +147,7 @@
                 <div class="col-md-6"><label class="form-label small fw-bold">Título</label><input type="text" class="form-control" placeholder="Ej.: El Hobbit" required></div>
                 <div class="col-md-6"><label class="form-label small fw-bold">Autor</label><input type="text" class="form-control" placeholder="J.R.R. Tolkien" required></div>
                 <div class="col-md-4"><label class="form-label small fw-bold">Género</label><input type="text" class="form-control" placeholder="Fantasía" required></div>
-                <div class="col-md-4"><label class="form-label small fw-bold">ISBN</label><input type="number" class="form-control" placeholder="9780345445605" pattern="\d{10,13}" required></div>
+                <div class="col-md-4"><label class="form-label small fw-bold">ISBN</label><input type="text" class="form-control" placeholder="9780345445605" pattern="\d{10,13}" required></div>
                 <div class="col-md-4"><label class="form-label small fw-bold">URL de la Portada</label><input type="text" class="form-control" placeholder="https://..." required></div>
                 <div class="col-md-4"><label class="form-label small fw-bold">Páginas</label><input type="number" class="form-control" placeholder="310" required></div>
                 <div class="col-md-4"><label class="form-label small fw-bold">Idioma</label><input type="text" class="form-control" placeholder="Español" required></div>
@@ -189,8 +189,8 @@
             <thead>
               <tr class="small">
                 <th class="ps-4 col-estado">ESTADO</th>
-                <th class="col-usuario" onclick="sortTable(1, '#reviews')">USUARIO <i class="bi bi-sort-alpha-down"></i></th>
-                <th class="col-libro" onclick="sortTable(2, '#reviews')">LIBRO <i class="bi bi-sort-alpha-down"></i></th>
+                <th class="col-usuario" id="sort-user">USUARIO <i class="bi bi-sort-alpha-down"></i></th>
+                <th class="col-libro" id="sort-book">LIBRO <i class="bi bi-sort-alpha-down"></i></th>
                 <th class="col-comentario">COMENTARIO</th>
                 <th class="text-end pe-4 col-acciones">ACCIONES</th>
               </tr>

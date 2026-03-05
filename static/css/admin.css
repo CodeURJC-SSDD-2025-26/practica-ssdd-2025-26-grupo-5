@@ -94,12 +94,6 @@
     object-fit: cover;
 }
 
-/* Modal */
-.modal-header-custom,
-.modal-body-custom {
-    background-color: #f4f1ea;
-}
-
 /* Forms */
 textarea.form-control {
     resize: vertical;

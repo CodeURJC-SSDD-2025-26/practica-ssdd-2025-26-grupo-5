@@ -118,3 +118,9 @@ body {
     color: #f4f1ea;
     text-decoration: underline;
 }
+
+/* Modal */
+.modal-header-custom,
+.modal-body-custom {
+    background-color: #f4f1ea;
+}
