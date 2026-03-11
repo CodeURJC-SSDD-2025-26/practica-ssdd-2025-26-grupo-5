@@ -1,5 +1,5 @@
 const datosLectura = [2, 3, 1, 5, 2, 4, 8, 6, 3, 4, 2, 5];
-const promedio = (datosLectura.reduce((a, b) => a + b, 0) / datosLectura.length).toFixed(2);
+const promedioLectura = (datosLectura.reduce((a, b) => a + b, 0) / datosLectura.length).toFixed(2);
 
 new Chart(document.getElementById('graficaLectura').getContext('2d'), {
     type: 'bar',
@@ -7,7 +7,7 @@ new Chart(document.getElementById('graficaLectura').getContext('2d'), {
         labels: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
         datasets: [{
             ...baseDatasetStyle,
-            label: 'Libros leídos por mes',
+            label: 'Libros leídos',
             data: datosLectura,
         }]
     },
@@ -15,10 +15,14 @@ new Chart(document.getElementById('graficaLectura').getContext('2d'), {
         ...baseChartOptions,
         plugins: {
             ...baseChartOptions.plugins,
-            legend: { display: true, position: 'top' }, // <- esta muestra leyenda
+            legend: {
+                display: true,
+                position: 'top',
+                onClick: null
+            },
             title: {
                 ...baseChartOptions.plugins.title,
-                text: 'Media mensual: ' + promedio + ' libros'
+                text: 'Media mensual: ' + promedioLectura + ' libros'
             }
         },
         scales: {
