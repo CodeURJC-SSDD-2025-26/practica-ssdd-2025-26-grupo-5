@@ -1,5 +1,4 @@
-
-
+package es.code_urjc_g5.bookify_project;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
