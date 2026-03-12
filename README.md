@@ -70,67 +70,67 @@ The application manages four main entities, all interrelated:
 ### **Navigation Diagram**
 This diagram shows how to navigate between the different pages of the application:
 
-![Navegation Diagram](static/imgs/navigation_imgs/navegationDiagram.png)
+![Navegation Diagram](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/navegationDiagram.png)
 
 ### **Screenshots and Page Descriptions**
 
 #### **1. Main page / Home**
-![Main Page](static/imgs/navigation_imgs/welcome-main.png)
+![Main Page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/welcome-main.png)
 
 > Home page showing a welcome message, recommended books, and the most-read books at the moment. It includes a navigation bar and access to registration/login for unauthenticated users, as well as access to the personal library. Towards the bottom of the page, you can find contact information, terms, and policies.
 #### **2. Log in Page**
 
-![Log In Page](static/imgs/navigation_imgs/login.png)
+![Log In Page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/login.png)
 
 > Login page for registered users. Includes fields to enter username and password, as well as a link to recover the password if forgotten. There is also a link to register if the user does not have an account.
 #### **3. Register Page**
-![Register Page](static/imgs/navigation_imgs/signup.png)
+![Register Page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/signup.png)
 > Registration page for new users. Includes fields to enter username, email, password, and password confirmation. There is also a link to log in if the user already has an account.
 
 #### **4. User Profile Page**
-![User Profile page](static/imgs/navigation_imgs/profile.png)
-![User Profile page](static/imgs/navigation_imgs/editProfile.png)
+![User Profile page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/profile.png)
+![User Profile page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/editProfile.png)
 > User profile page showing personal information, reading statistics, and a section to manage collections.
 
 #### **5. My Library Page**
-![My Library page](static/imgs/navigation_imgs/myLibrary.png)
+![My Library page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/myLibrary.png)
 > User's personal library page, where they can view and manage their book collections.
 
 #### **6. Book Description Page**
-![Book Description page](static/imgs/navigation_imgs/bookDescription.png)
+![Book Description page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/bookDescription.png)
 > Description page for a specific book, showing details such as title, author, synopsis, genre, and a user reviews section. It also includes a button to add the book to a personal collection and a star rating system.
 
 #### **7. Admin Panel Page**
 > Administration panel page, accessible only to users with an administrator role. Includes sections to manage books, users, and reviews.
 
 ##### **7.1 Admin Panel Page - Books**
-![Admin Panel page](static/imgs/navigation_imgs/admin1.png)
-![Admin Panel page](static/imgs/navigation_imgs/register-book.png)
+![Admin Panel page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/admin1.png)
+![Admin Panel page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/register-book.png)
 
 > Book management section, where the administrator can add, edit, or delete books from the catalog. Includes a form to enter book details and a table with the list of registered books.
 
 ##### **7.2 Admin Panel Page - Reviews**
-![Admin Panel page](static/imgs/navigation_imgs/admin2.png)
+![Admin Panel page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/admin2.png)
 > Review management section, where the administrator can moderate reviews posted by users, deleting those that are inappropriate or violate platform policies. Includes a list of reviews and action options for each.
 
 ##### **7.3 Admin Panel Page - Users**
-![Admin Panel page](static/imgs/navigation_imgs/admin3.png)
+![Admin Panel page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/admin3.png)
 > User management section, where the administrator can view the list of registered users, edit their roles, or delete accounts if necessary. Includes a table with user information and action options.
 
 #### **8. Terms of Service Page**
-![Terms of Service page](static/imgs/navigation_imgs/ToS.png)
+![Terms of Service page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/ToS.png)
 > Terms of Service page detailing the platform's conditions of use, including rights.
 
 #### **9. Privacy Policy Page**
-![Privacy Policy page](static/imgs/navigation_imgs/pp.png)
+![Privacy Policy page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/pp.png)
 > Privacy Policy page explaining how data is collected, used, and protected.
 
 #### **10. Contact Page**
-![Contact page](static/imgs/navigation_imgs/contact.png)
+![Contact page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/contact.png)
 > Contact page providing a form for users to send inquiries or feedback to the team.
 
 #### **11. About us Page**
-![About us page](static/imgs/navigation_imgs/aboutUs.png)
+![About us page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/aboutUs.png)
 > "About us" page presenting the development team, the project's mission and vision, and any other relevant information regarding the platform's origin and purpose.
 
 
@@ -143,11 +143,11 @@ I was responsible for developing the templates for the Book Description, My Libr
 
 | Nº | Commits | Files |
 |:---:|:---:|:---:|
-| 1 | [Creation and initial structure of the bookDescription.html, bookDescription.css, and reviews.js files](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/9a6b338505d5798434a661dc49ba9c976d307679) | [bookDescription.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/bookDescription.html) <br> [bookDescription.css](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/css/bookDescription.css) |
-| 2 | [Creation and initial structure of the myLibrary.html and myLibrary.css files](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/f8039aad8bfa27af9390360d7d2009be09d92250) | [myLibrary.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/myLibrary.html) <br> [myLibrary.css](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/css/myLibrary.css) |
-| 3 | [Creating a modal to create a new collection in the bookDescription file](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/101712d3d03f80b8f4c86d59b92259e9c07cee73) | [bookDescription.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/bookDescription.html) |
-| 4 | [Creation of the admin.html and admin.css files. Creation of a general .js file to handle all the charts.](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/e885385460d47ed63fbd3f6c3f13b80cab656702) | [admin.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/admin.html) <br> [admin.css](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/css/admin.css) <br> [charts.js](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/js/charts.js) |
-| 5 | [Updated the comment section, book editing, hyperlinks and JS files for sorting and progress bar](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/0e06b6f0e8830a6bd89ced2e5c06f8fe158dea55) | [bookDescription.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/bookDescription.html) <br> [admin.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/admin.html) <br> [admin.js](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/js/admin.js) <br> [bookProgress.js](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/js/bookProgress.js) <br> [tarRating.js](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/static/js/reviewsStarRating.js) |
+| 1 | [Creation and initial structure of the bookDescription.html, bookDescription.css, and reviews.js files](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/9a6b338505d5798434a661dc49ba9c976d307679) | [bookDescription.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/templates/bookDescription.html) <br> [bookDescription.css](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/static/css/bookDescription.css) |
+| 2 | [Creation and initial structure of the myLibrary.html and myLibrary.css files](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/f8039aad8bfa27af9390360d7d2009be09d92250) | [myLibrary.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/templates/myLibrary.html) <br> [myLibrary.css](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/static/css/myLibrary.css) |
+| 3 | [Creating a modal to create a new collection in the bookDescription file](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/101712d3d03f80b8f4c86d59b92259e9c07cee73) | [bookDescription.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/templates/bookDescription.html) |
+| 4 | [Creation of the admin.html and admin.css files. Creation of a general .js file to handle all the charts.](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/e885385460d47ed63fbd3f6c3f13b80cab656702) | [admin.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/templates/admin.html) <br> [admin.css](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/static/css/admin.css) <br> [charts.js](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/static/js/charts.js) |
+| 5 | [Updated the comment section, book editing, hyperlinks and JS files for sorting and progress bar](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/0e06b6f0e8830a6bd89ced2e5c06f8fe158dea55) | [bookDescription.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/templates/bookDescription.html) <br> [admin.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/templates/admin.html) <br> [admin.js](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/static/js/admin.js) <br> [bookProgress.js](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/static/js/bookProgress.js) <br> [reniewsStarRating.js](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/static/js/reviewsStarRating.js) |
 
 ---
 
@@ -157,11 +157,11 @@ My job was the development and web design of the BOOKIFY application, implementi
 
 | Nº    | Commits      | Files      |
 |:------------: |:------------:| :------------:|
-|1| [Implemented the index.html, where you can see the main web page, as an introduction to the web.](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/cfde8dfc8a6f5e1e56865e4c0b9f29968d7287cd)  | [index.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/index.html)   |
-|2| [Add styles, images, and update HTML structure for Bookify](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/31141b375442edadb2b9dfad0851667fb59c59c0)  | [index.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/index.html)   |
-|3| [Add profile page with personal information and styling; include profile image and update navbar links](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/17a9d873756bac0334863fc99d2c4a2975bc78c1)  | [profile.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/profile.html)   |
-|4| [Added Privacy Policy page where there's a short text that explains how we work in terms of privacy](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/4703e66021f4e3a17784d0d3e3c51d3259f471d0)  | [pp.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/pp.html)   |
-|5| [Added Terms of Service page where there's a text that explains how we work and what is the service we provide](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/4703e66021f4e3a17784d0d3e3c51d3259f471d0)  | [ToS.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/templates/ToS.html)   |
+|1| [Implemented the index.html, where you can see the main web page, as an introduction to the web.](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/cfde8dfc8a6f5e1e56865e4c0b9f29968d7287cd)  | [index.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/templates/index.html)   |
+|2| [Add styles, images, and update HTML structure for Bookify](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/31141b375442edadb2b9dfad0851667fb59c59c0)  | [index.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/templates/index.html)   |
+|3| [Add profile page with personal information and styling; include profile image and update navbar links](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/17a9d873756bac0334863fc99d2c4a2975bc78c1)  | [profile.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/templates/profile.html)   |
+|4| [Added Privacy Policy page where there's a short text that explains how we work in terms of privacy](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/4703e66021f4e3a17784d0d3e3c51d3259f471d0)  | [pp.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/templates/pp.html)   |
+|5| [Added Terms of Service page where there's a text that explains how we work and what is the service we provide](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/commit/4703e66021f4e3a17784d0d3e3c51d3259f471d0)  | [ToS.html](https://github.com/CodeURJC-SSDD-2025-26/practica-ssdd-2025-26-grupo-5/blob/main/backend/bookify_project/src/main/resources/templates/ToS.html)   |
 
 ---
 
