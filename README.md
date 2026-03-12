@@ -80,7 +80,7 @@ This diagram shows how to navigate between the different pages of the applicatio
 > Home page showing a welcome message, recommended books, and the most-read books at the moment. It includes a navigation bar and access to registration/login for unauthenticated users, as well as access to the personal library. Towards the bottom of the page, you can find contact information, terms, and policies.
 #### **2. Log in Page**
 
-![Log In Page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/ogin.png)
+![Log In Page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/login.png)
 
 > Login page for registered users. Includes fields to enter username and password, as well as a link to recover the password if forgotten. There is also a link to register if the user does not have an account.
 #### **3. Register Page**
