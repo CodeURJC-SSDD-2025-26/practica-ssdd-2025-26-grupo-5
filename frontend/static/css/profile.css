@@ -1,0 +1,29 @@
+.container-profile {
+  display: grid;
+  grid-template-columns: 2fr 2fr; /* 25% izquierda, 75% derecha */
+  gap: 20px;
+  padding: 20px;
+}
+
+.perfil-section {
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.listas-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.profile-table{
+  background-color: #f4f1ea;
+  border: 3px solid #d8d8d8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-wrapper {
+    width: 50%;
+    margin: auto;
+    height: 45vh;
+}
