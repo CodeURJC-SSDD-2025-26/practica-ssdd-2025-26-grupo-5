@@ -70,67 +70,67 @@ The application manages four main entities, all interrelated:
 ### **Navigation Diagram**
 This diagram shows how to navigate between the different pages of the application:
 
-![Navegation Diagram](static/imgs/navigation_imgs/navegationDiagram.png)
+![Navegation Diagram](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/navegationDiagram.png)
 
 ### **Screenshots and Page Descriptions**
 
 #### **1. Main page / Home**
-![Main Page](static/imgs/navigation_imgs/welcome-main.png)
+![Main Page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/welcome-main.png)
 
 > Home page showing a welcome message, recommended books, and the most-read books at the moment. It includes a navigation bar and access to registration/login for unauthenticated users, as well as access to the personal library. Towards the bottom of the page, you can find contact information, terms, and policies.
 #### **2. Log in Page**
 
-![Log In Page](static/imgs/navigation_imgs/login.png)
+![Log In Page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/ogin.png)
 
 > Login page for registered users. Includes fields to enter username and password, as well as a link to recover the password if forgotten. There is also a link to register if the user does not have an account.
 #### **3. Register Page**
-![Register Page](static/imgs/navigation_imgs/signup.png)
+![Register Page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/signup.png)
 > Registration page for new users. Includes fields to enter username, email, password, and password confirmation. There is also a link to log in if the user already has an account.
 
 #### **4. User Profile Page**
-![User Profile page](static/imgs/navigation_imgs/profile.png)
-![User Profile page](static/imgs/navigation_imgs/editProfile.png)
+![User Profile page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/profile.png)
+![User Profile page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/editProfile.png)
 > User profile page showing personal information, reading statistics, and a section to manage collections.
 
 #### **5. My Library Page**
-![My Library page](static/imgs/navigation_imgs/myLibrary.png)
+![My Library page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/myLibrary.png)
 > User's personal library page, where they can view and manage their book collections.
 
 #### **6. Book Description Page**
-![Book Description page](static/imgs/navigation_imgs/bookDescription.png)
+![Book Description page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/bookDescription.png)
 > Description page for a specific book, showing details such as title, author, synopsis, genre, and a user reviews section. It also includes a button to add the book to a personal collection and a star rating system.
 
 #### **7. Admin Panel Page**
 > Administration panel page, accessible only to users with an administrator role. Includes sections to manage books, users, and reviews.
 
 ##### **7.1 Admin Panel Page - Books**
-![Admin Panel page](static/imgs/navigation_imgs/admin1.png)
-![Admin Panel page](static/imgs/navigation_imgs/register-book.png)
+![Admin Panel page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/admin1.png)
+![Admin Panel page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/register-book.png)
 
 > Book management section, where the administrator can add, edit, or delete books from the catalog. Includes a form to enter book details and a table with the list of registered books.
 
 ##### **7.2 Admin Panel Page - Reviews**
-![Admin Panel page](static/imgs/navigation_imgs/admin2.png)
+![Admin Panel page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/admin2.png)
 > Review management section, where the administrator can moderate reviews posted by users, deleting those that are inappropriate or violate platform policies. Includes a list of reviews and action options for each.
 
 ##### **7.3 Admin Panel Page - Users**
-![Admin Panel page](static/imgs/navigation_imgs/admin3.png)
+![Admin Panel page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/admin3.png)
 > User management section, where the administrator can view the list of registered users, edit their roles, or delete accounts if necessary. Includes a table with user information and action options.
 
 #### **8. Terms of Service Page**
-![Terms of Service page](static/imgs/navigation_imgs/ToS.png)
+![Terms of Service page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/ToS.png)
 > Terms of Service page detailing the platform's conditions of use, including rights.
 
 #### **9. Privacy Policy Page**
-![Privacy Policy page](static/imgs/navigation_imgs/pp.png)
+![Privacy Policy page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/pp.png)
 > Privacy Policy page explaining how data is collected, used, and protected.
 
 #### **10. Contact Page**
-![Contact page](static/imgs/navigation_imgs/contact.png)
+![Contact page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/contact.png)
 > Contact page providing a form for users to send inquiries or feedback to the team.
 
 #### **11. About us Page**
-![About us page](static/imgs/navigation_imgs/aboutUs.png)
+![About us page](/backend/bookify_project/src/main/resources/static/imgs/navigation_imgs/aboutUs.png)
 > "About us" page presenting the development team, the project's mission and vision, and any other relevant information regarding the platform's origin and purpose.
 
 
