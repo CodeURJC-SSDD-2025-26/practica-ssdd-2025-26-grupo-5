@@ -15,26 +15,7 @@
 <body>
 
 <!-- Header -->
-<header class="navbar navbar-expand-lg sticky-top mb-4">
-  <div class="container">
-    <a class="navbar-brand fw-bold brand-color fst-italic" href="index.html">BOOKIFY</a>
-    <div class="d-flex flex-grow-1 mx-4">
-        <input class="form-control form-control-sm search-custom" type="search" placeholder="Buscar libros, autores..." aria-label="Search">
-    </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"> <a class="nav-link" href="admin.html">Modo Admin</a></li>
-        <li class="nav-item"> <a class="nav-link" href="login.html">Iniciar Sesión</a></li>
-        <li class="nav-item"> <a class="nav-link" href="profile.html">Perfil</a></li>
-        <li class="nav-item"> <a class="nav-link" href="myLibrary.html">Mi Biblioteca</a> </li>
-      </ul>
-    </div>
-  </div>
-</header>
+{{>header}}
 <!-- End Hearder -->
 
 <div class="welcome-section py-2">
@@ -92,7 +73,7 @@
             <a href="bookDescription.html" class="text-decoration-none text-dark">
               <h6 class="card-title fw-bold mb-1">El Gran Gatsby</h6>
             </a>
-            <p class="card-text small text-muted">F. Scott Fitzgerald</p>
+            <p class="card-text small text-muted">{{name}}</p>
             <a href="bookDescription.html" class="btn btn-sm btn-custom w-100">Quiero leerlo</a>
           </div>
         </div>
