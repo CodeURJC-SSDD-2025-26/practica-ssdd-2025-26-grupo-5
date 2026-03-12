@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Descripción | El Hobbit</title>
+  <title>Descripción | {{book.title}}</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="../static/css/style.css">
-  <link rel="stylesheet" href="../static/css/bookDescription.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/bookDescription.css">
 </head>
 <body>
 
@@ -40,7 +40,7 @@
 
     <div class="col-md-4 text-center">
       <div class="book-detail-cover">
-        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546071216i/5907.jpg" class="img-fluid rounded shadow-lg" alt="Portada del libro">
+        <img src="{{book.coverUrl}}" class="img-fluid rounded shadow-lg" alt="Portada del libro">
       </div>
     </div>
 
@@ -48,17 +48,17 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb small">
           <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Inicio</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Fantasía</li>
+          <li class="breadcrumb-item active" aria-current="page">{{book.genre}}</li>
         </ol>
       </nav>
 
-      <h1 class="display-4 fw-bold brand-color">El Hobbit</h1>
-      <h4 class="text-muted mb-4">J.R.R. Tolkien</h4>
+      <h1 class="display-4 fw-bold brand-color">{{book.title}}</h1>
+      <h4 class="text-muted mb-4">{{book.author}}</h4>
 
       <div class="d-flex mb-4 align-items-center justify-content-between">
         <div class="d-flex align-items-center book-score">
-          <span class="badge bg-success me-2">8.2 / 10</span>
-          <span class="text-muted small">(1,240 reseñas)</span>
+          <span class="badge bg-success me-2">{{book.score}} / 10</span>
+          <span class="text-muted small">({{book.reviewCount}} reseñas)</span>
         </div>
 
         <div class="d-flex gap-2">
@@ -84,25 +84,20 @@
       </div>
 
       <h5 class="fw-bold">Sinopsis</h5>
-      <p class="lead text-secondary">
-        Escrito para los hijos de J.R.R. Tolkien, El Hobbit alcanzó un éxito inmediato cuando se publicó en 1937. Bilbo Bolsón, un hobbit que disfruta de su cómoda vida, se ve arrastrado a una aventura inesperada por el mago Gandalf y un grupo de trece enanos liderados por Thorin Escudo de Roble.
-        <br><br>
-        Su objetivo es recuperar el tesoro custodiado por el temible dragón Smaug en la Montaña Solitaria. A través de este viaje épico, Bilbo abandonará la seguridad de su hogar para enfrentarse a trolls, orcos y acertijos en la oscuridad. En las profundidades de la tierra, encontrará no solo un valor que no sabía que poseía, sino también un anillo mágico cuyo origen y poder cambiarán el destino de la Tierra Media para siempre.
-      </p>
-
+      <p class="lead text-secondary book-synopsis">{{book.synopsis}}</p>
       <div class="book-info-box p-3 rounded mt-4">
         <div class="row text-center">
           <div class="col-4">
             <small class="d-block text-muted">Páginas</small>
-            <span class="fw-bold">310</span>
+            <span class="fw-bold">{{book.pages}}</span>
           </div>
           <div class="col-4 border-start border-end">
             <small class="d-block text-muted">Idioma</small>
-            <span class="fw-bold">Español</span>
+            <span class="fw-bold">{{book.language}}</span>
           </div>
           <div class="col-4">
             <small class="d-block text-muted">Publicado</small>
-            <span class="fw-bold">1937</span>
+            <span class="fw-bold">{{book.publicationYear}}</span>
           </div>
         </div>
       </div>
@@ -238,9 +233,9 @@
 <!-- End Footer -->
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="../static/js/charts.js"></script>
-<script src="../static/js/reviews.js"></script>
-<script src="../static/js/reviewsStarRating.js"></script>
+<script src="/js/charts.js"></script>
+<script src="/js/reviews.js"></script>
+<script src="/js/reviewsStarRating.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

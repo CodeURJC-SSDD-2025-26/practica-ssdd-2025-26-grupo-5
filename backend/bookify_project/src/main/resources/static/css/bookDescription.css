@@ -21,6 +21,10 @@
     text-align: justify;
 }
 
+.book-synopsis {
+    white-space: pre-line;
+}
+
 /* Score badge */
 .book-score .badge {
     font-size: 1rem;
