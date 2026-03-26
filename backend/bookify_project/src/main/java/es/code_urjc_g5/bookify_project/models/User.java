@@ -1,8 +1,12 @@
 package es.code_urjc_g5.bookify_project.models;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -28,6 +32,12 @@ public class User {
     private String user_role;
     // Getters y Setters
     
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Collection> collections;
+
+    @OneToMany(mappedBy = "user")
+    private List<Review> reviews
+    ;
     public Long getId() {
         return id;
     }
