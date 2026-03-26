@@ -39,7 +39,7 @@
         <img src="{{user_profile_pic}}" class="rounded-circle shadow mb-3" alt="Foto de perfil" width="150"
           height="150">
         <h2 class="fw-bold brand-color">{{user_name}}</h2>
-        <p class="text-muted">{{short_desc}} | {{location}}</p>
+        <p class="text-muted">{{short_desc}} | {{user_location}}</p>
         <p class="small">Miembro desde {{user_since}}</p>
         <button class="btn btn-custom btn-sm me-2" data-bs-toggle="modal" data-bs-target="#editProfileModal">Editar
           Perfil</button>
@@ -67,7 +67,7 @@
             </div>
             <div class="col-md-6">
               <p class="text-muted small mb-1">Género Favorito</p>
-              <p class="fw-semibold">{{user_favorite_genres}}</p>
+              <p class="fw-semibold">{{user_fav_genres}}</p>
             </div>
           </div>
           <div>
