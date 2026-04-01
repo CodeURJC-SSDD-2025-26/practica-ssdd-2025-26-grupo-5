@@ -1,43 +1,30 @@
 package es.code_urjc_g5.bookify_project.models;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.Setter;
 
-
+@Setter
+@Getter
 @Entity
 public class Review {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    private String review_text;
-    private int review_rating;
 
-    public Long getId() {
-        return id;
-    }
+    @Column(columnDefinition = "TEXT")
+    private String reviewText;
+    private int reviewRating;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @ManyToOne
+    private User user;
 
-    public String getReview_text() {
-        return review_text;
-    }
-
-    public void setReview_text(String review_text) {
-        this.review_text = review_text;
-    }
-
-    public int getReview_rating() {
-        return review_rating;
-    }
-
-    public void setReview_rating(int review_rating) {
-        this.review_rating = review_rating;
-    }
-
-
+    @ManyToOne
+    private Book book;
 }
