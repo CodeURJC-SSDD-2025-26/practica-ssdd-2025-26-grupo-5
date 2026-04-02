@@ -1,15 +1,16 @@
 package es.code_urjc_g5.bookify_project.controllers;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import es.code_urjc_g5.bookify_project.models.Book;
-import es.code_urjc_g5.bookify_project.repositories.BookRepository;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.Optional;
+import es.code_urjc_g5.bookify_project.models.Book;
+import es.code_urjc_g5.bookify_project.repositories.BookRepository;
 
 @Controller
 public class BookController {
@@ -32,8 +33,8 @@ public class BookController {
     }
 
     @PostMapping("/editbook")
-    public String editBook(Book editedBook, Model model) {
-        Optional<Book> optionalBook = bookRepository.findById(id);
+    public String editBook(Model model, Book editedBook) {
+        Optional<Book> optionalBook = bookRepository.findById(editedBook.getId());
         if (optionalBook.isEmpty()) {
             return "book_not_found";
         }
