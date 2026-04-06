@@ -5,31 +5,26 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
 @Entity
-@Table(name = "books")
-public class Book {
+public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String title;
-    private String author;
-    private String genre;
-    @Column(columnDefinition = "TEXT")
-    private String synopsis;
-    private String coverUrl;
-    private int pages;
-    private String language;
-    private int publicationYear;
-    private double score;
-    private int reviewCount;
 
-    // Getters y Setters
-    
+    @Column(columnDefinition = "TEXT")
+    private String reviewText;
+    private int reviewRating;
+
+    @ManyToOne
+    private User user;
+
+    @ManyToOne
+    private Book book;
 }
