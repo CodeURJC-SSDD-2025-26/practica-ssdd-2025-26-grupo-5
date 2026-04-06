@@ -11,18 +11,8 @@ public class headerController {
         return "admin";
     }
 
-    @GetMapping("/login")
-    public String contact() {
-        return "login";
-    }
-
     @GetMapping("/profile")
     public String privacyPolicy() {
         return "profile";
-    }
-
-    @GetMapping("/myLibrary")
-    public String termsOfService() {
-        return "myLibrary";
     }
 }
