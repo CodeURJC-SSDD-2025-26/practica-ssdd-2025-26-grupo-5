@@ -29,7 +29,7 @@ public class Book {
     private int publicationYear;
     private double score;
     private int reviewCount;
-
-    // Getters y Setters
-    
+    @jakarta.persistence.Lob
+    @jakarta.persistence.Column(columnDefinition = "LONGBLOB")
+    private byte[] pdfFile;    
 }

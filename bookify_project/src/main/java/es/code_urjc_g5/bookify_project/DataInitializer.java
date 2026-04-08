@@ -5,6 +5,7 @@ import es.code_urjc_g5.bookify_project.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.core.io.ClassPathResource;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
@@ -28,6 +29,14 @@ public class DataInitializer implements CommandLineRunner {
         book.setPublicationYear(1937);
         book.setScore(0);
         book.setReviewCount(0);
+
+        try {
+            ClassPathResource pdfResource = new ClassPathResource("TheHobbit.pdf");
+            byte[] pdfBytes = pdfResource.getInputStream().readAllBytes();
+            book.setPdfFile(pdfBytes);
+        } catch (Exception e) {
+            System.out.println("No se pudo cargar el PDF: " + e.getMessage());
+        }
 
         bookRepository.save(book);
     }
