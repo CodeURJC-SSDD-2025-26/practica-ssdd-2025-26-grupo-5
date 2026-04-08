@@ -43,17 +43,17 @@
       {{#books}}
       <div class="col">
         <div class="card h-100 book-cover">
-          <a href="bookDescription.html?id={{id}}">
+          <a href="/book/{{id}}">
             <div class="book-img-container">
-              <img src="{{image_url}}" class="card-img-top book-img" alt="{{book_title}}">
+              <img src="{{coverUrl}}" class="card-img-top book-img" alt="{{title}}">
             </div>
           </a>
           <div class="card-body px-0">
-            <a href="bookDescription.html?id={{id}}" class="text-decoration-none text-dark">
-              <h6 class="card-title fw-bold mb-1">{{book_title}}</h6>
+            <a href="/book/{{id}}" class="text-decoration-none text-dark">
+              <h6 class="card-title fw-bold mb-1">{{title}}</h6>
             </a>
-            <p class="card-text small text-muted">{{author_name}}</p>
-            <a href="bookDescription.html?id={{id}}" class="btn btn-sm btn-custom w-100">Quiero leerlo</a>
+            <p class="card-text small text-muted">{{author}}</p>
+            <a href="/book/{{id}}" class="btn btn-sm btn-custom w-100">Quiero leerlo</a>
           </div>
         </div>
       </div>
@@ -72,19 +72,19 @@
      There are 10 sample books.
      Images are not of our property. They've been taken as a sample-->
     <div class="row g-2">
-      {{#top_books}}
+      {{#topBooks}}
       <div class="col-auto">
-        <a href="bookDescription.html?id={{id}}" class="text-decoration-none">
+        <a href="/book/{{id}}" class="text-decoration-none">
           <div class="book-img-container-small">
-            <img src="{{image_url}}" class="book-img-small" alt="{{book_title}}">
+            <img src="{{coverUrl}}" class="book-img-small" alt="{{title}}">
           </div>
         </a>
       </div>
-      {{/top_books}}
-      
-      {{^top_books}}
+      {{/topBooks}}
+
+      {{^topBooks}}
       <p>No hay libros más leídos disponibles en este momento.</p>
-      {{/top_books}}
+      {{/topBooks}}
 
     </div>
   </div>

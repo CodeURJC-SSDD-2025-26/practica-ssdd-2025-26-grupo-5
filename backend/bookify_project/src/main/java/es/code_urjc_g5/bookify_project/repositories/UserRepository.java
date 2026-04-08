@@ -11,15 +11,15 @@ import es.code_urjc_g5.bookify_project.models.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    @Query("SELECT u FROM User u WHERE LOWER(u.user_email) = LOWER(:email)")
+    @Query("SELECT u FROM User u WHERE LOWER(u.userEmail) = LOWER(:email)")
     Optional<User> findByEmail(@Param("email") String email);
 
-    @Query("SELECT u FROM User u WHERE LOWER(u.user_name) = LOWER(:userName)")
+    @Query("SELECT u FROM User u WHERE LOWER(u.userName) = LOWER(:userName)")
     Optional<User> findByUsername(@Param("userName") String userName);
 
-    @Query("SELECT u FROM User u WHERE LOWER(u.user_name) LIKE LOWER(CONCAT('%', :searchText, '%')) OR LOWER(u.user_email) LIKE LOWER(CONCAT('%', :searchText, '%')) ORDER BY u.user_name ASC")
+    @Query("SELECT u FROM User u WHERE LOWER(u.userName) LIKE LOWER(CONCAT('%', :searchText, '%')) OR LOWER(u.userEmail) LIKE LOWER(CONCAT('%', :searchText, '%')) ORDER BY u.userName ASC")
     List<User> searchUsers(@Param("searchText") String searchText);
 
-    @Query("SELECT CASE WHEN COUNT(u) > 0 THEN true ELSE false END FROM User u WHERE LOWER(u.user_email) = LOWER(:email)")
+    @Query("SELECT CASE WHEN COUNT(u) > 0 THEN true ELSE false END FROM User u WHERE LOWER(u.userEmail) = LOWER(:email)")
     boolean existsByEmail(@Param("email") String email);
 }

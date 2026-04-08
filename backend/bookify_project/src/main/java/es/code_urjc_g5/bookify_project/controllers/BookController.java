@@ -60,13 +60,11 @@ public class BookController {
     @GetMapping("/book/{id}")
     public String bookDescription(@PathVariable Long id, Model model) {
         Optional<Book> optionalBook = bookRepository.findById(id);
-        if (optionalBook.isEmpty()) {
-            Book book = bookRepository.findById(id).orElseThrow();
-            model.addAttribute("book", book);
-        return "bookDescription";
+        if (optionalBook.isPresent()) {
+            model.addAttribute("book", optionalBook.get());
+            return "bookDescription";
         } else {
             return "bookNotFound";
         }
-        
     }
 }
