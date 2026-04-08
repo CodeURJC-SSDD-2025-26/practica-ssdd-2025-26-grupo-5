@@ -1,0 +1,12 @@
+Profile page user parameters
+- Todos los parametros en el html comienzan por "profile":
+        -profile_pic
+        -profile_name
+        -profile_email
+        -profile_new_password
+        -profile_phone
+        -profile_dob (date of birth)
+        -profile_location
+        -profile_bio
+        -profile_confirm_password
+        -profile_fav_genre
