@@ -14,6 +14,7 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
+        if (bookRepository.count() > 0) return;
         Book book = new Book();
         book.setTitle("El Hobbit");
         book.setAuthor("J.R.R. Tolkien");
