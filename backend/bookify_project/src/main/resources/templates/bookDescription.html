@@ -47,7 +47,7 @@
     <div class="col-md-8">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb small">
-          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Inicio</a></li>
+          <li class="breadcrumb-item"><a href="/" class="text-decoration-none text-muted">Inicio</a></li>
           <li class="breadcrumb-item active" aria-current="page">{{book.genre}}</li>
         </ol>
       </nav>
@@ -125,29 +125,21 @@
   <div class="row">
 
     <div class="col-md-8">
+      {{#reviews}}
       <div class="card comment-card mb-3 border-0 shadow-sm">
         <div class="card-body">
           <div class="d-flex justify-content-between">
-            <h6 class="fw-bold mb-1">María García</h6>
-            <span class="fw-bold brand-color">Puntuación: 9/10</span>
+            <h6 class="fw-bold mb-1">Lector anónimo</h6>
+            <span class="fw-bold brand-color">Puntuación: {{reviewRating}}/10</span>
           </div>
-          <p class="text-muted small mb-2">Publicado hace 2 días</p>
-          <p class="card-text">¡Un clásico imprescindible! Me encantó la evolución de Bilbo a lo largo del viaje. La edición es preciosa.</p>
+          <p class="card-text">{{reviewText}}</p>
         </div>
       </div>
+      {{/reviews}}
 
-      <div class="card comment-card mb-3 border-0 shadow-sm">
-        <div class="card-body">
-          <div class="d-flex justify-content-between">
-            <h6 class="fw-bold mb-1">Juan Pérez</h6>
-            <span class="fw-bold brand-color">Puntuación: 6/10</span>
-          </div>
-          <p class="text-muted small mb-2">Publicado hace 1 semana</p>
-          <p class="card-text">Muy entretenido, aunque al principio se me hizo un poco lento. Ideal para leer antes de ver las películas.</p>
-        </div>
-      </div>
-
-      <button class="btn btn-outline-secondary btn-sm mt-3">Cargar más comentarios</button>
+      {{^reviews}}
+      <p class="text-muted">Aún no hay reseñas. ¡Sé el primero!</p>
+      {{/reviews}}
     </div>
 
     <!-- Review Form -->
@@ -156,41 +148,43 @@
         <h5 class="fw-bold mb-1">Escribe tu reseña</h5>
         <p class="small text-muted mb-3">Cuéntale a otros lectores qué te ha parecido.</p>
 
-        <div class="mb-3">
-          <label class="form-label small fw-bold">Tu puntuación</label>
-          <div class="d-flex align-items-center gap-3">
-            <div class="star-rating">
-              <input type="radio" id="star10" name="rating" value="10">
-              <label for="star10"><i class="bi bi-star"></i></label>
-              <input type="radio" id="star9" name="rating" value="9">
-              <label for="star9"><i class="bi bi-star"></i></label>
-              <input type="radio" id="star8" name="rating" value="8">
-              <label for="star8"><i class="bi bi-star"></i></label>
-              <input type="radio" id="star7" name="rating" value="7">
-              <label for="star7"><i class="bi bi-star"></i></label>
-              <input type="radio" id="star6" name="rating" value="6">
-              <label for="star6"><i class="bi bi-star"></i></label>
-              <input type="radio" id="star5" name="rating" value="5">
-              <label for="star5"><i class="bi bi-star"></i></label>
-              <input type="radio" id="star4" name="rating" value="4">
-              <label for="star4"><i class="bi bi-star"></i></label>
-              <input type="radio" id="star3" name="rating" value="3">
-              <label for="star3"><i class="bi bi-star"></i></label>
-              <input type="radio" id="star2" name="rating" value="2">
-              <label for="star2"><i class="bi bi-star"></i></label>
-              <input type="radio" id="star1" name="rating" value="1">
-              <label for="star1"><i class="bi bi-star"></i></label>
+        <form method="post" action="/book/{{book.id}}/review">
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Tu puntuación</label>
+            <div class="d-flex align-items-center gap-3">
+              <div class="star-rating">
+                <input type="radio" id="star10" name="reviewRating" value="10">
+                <label for="star10"><i class="bi bi-star"></i></label>
+                <input type="radio" id="star9" name="reviewRating" value="9">
+                <label for="star9"><i class="bi bi-star"></i></label>
+                <input type="radio" id="star8" name="reviewRating" value="8">
+                <label for="star8"><i class="bi bi-star"></i></label>
+                <input type="radio" id="star7" name="reviewRating" value="7">
+                <label for="star7"><i class="bi bi-star"></i></label>
+                <input type="radio" id="star6" name="reviewRating" value="6">
+                <label for="star6"><i class="bi bi-star"></i></label>
+                <input type="radio" id="star5" name="reviewRating" value="5">
+                <label for="star5"><i class="bi bi-star"></i></label>
+                <input type="radio" id="star4" name="reviewRating" value="4">
+                <label for="star4"><i class="bi bi-star"></i></label>
+                <input type="radio" id="star3" name="reviewRating" value="3">
+                <label for="star3"><i class="bi bi-star"></i></label>
+                <input type="radio" id="star2" name="reviewRating" value="2">
+                <label for="star2"><i class="bi bi-star"></i></label>
+                <input type="radio" id="star1" name="reviewRating" value="1">
+                <label for="star1"><i class="bi bi-star"></i></label>
+              </div>
+              <span id="ratingDisplay" class="fw-bold brand-color"></span>
             </div>
-            <span id="ratingDisplay" class="fw-bold brand-color"></span>
           </div>
-        </div>
 
-        <div class="mb-3">
-          <label class="form-label small fw-bold">Tu comentario</label>
-          <textarea class="form-control" placeholder="¿Qué te ha parecido el libro?"></textarea>
-        </div>
+          <div class="mb-3">
+            <label class="form-label small fw-bold">Tu comentario</label>
+            <textarea class="form-control" name="reviewText" placeholder="¿Qué te ha parecido el libro?"></textarea>
+          </div>
 
-        <button class="btn btn-custom w-100">Publicar reseña</button>
+          <button type="submit" class="btn btn-custom w-100">Publicar reseña</button>
+        </form>
       </div>
     </div>
 
@@ -217,19 +211,7 @@
 </div>
 
 <!-- Footer -->
-<footer class="footer-section mt-5 py-4">
-  <div class="container text-center">
-    <p class="mb-2 fw-bold">Bookify</p>
-    <p class="small mb-2">Tu biblioteca digital personal</p>
-    <div class="mb-2 row-cols-auto">
-      <a href="aboutUs.html" class="footer-links">Sobre nosotros</a> |
-      <a href="contact.html" class="footer-links">Contacto</a> |
-      <a href="pp.html" class="footer-links">Política de privacidad</a> |
-      <a href="ToS.html" class="footer-links">Términos de servicio</a>
-    </div>
-    <small>© 2026 Bookify. Todos los derechos reservados.</small>
-  </div>
-</footer>
+{{>footer}}
 <!-- End Footer -->
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

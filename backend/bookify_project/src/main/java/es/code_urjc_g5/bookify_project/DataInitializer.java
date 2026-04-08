@@ -25,8 +25,8 @@ public class DataInitializer implements CommandLineRunner {
         book.setPages(310);
         book.setLanguage("Español");
         book.setPublicationYear(1937);
-        book.setScore(8.2);
-        book.setReviewCount(1240);
+        book.setScore(0);
+        book.setReviewCount(0);
 
         bookRepository.save(book);
     }
