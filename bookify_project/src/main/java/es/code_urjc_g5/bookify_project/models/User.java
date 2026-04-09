@@ -39,7 +39,7 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Collection> collections;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Review> reviews;
 
     public User(Long id, String userName, String userEmail, String userPhone, String userBirthday, String userLocation,

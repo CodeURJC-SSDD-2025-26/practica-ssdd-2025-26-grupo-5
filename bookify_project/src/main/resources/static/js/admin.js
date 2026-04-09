@@ -39,17 +39,59 @@ document.getElementById('sort-user').addEventListener('click', () => sortTable(1
 document.getElementById('sort-book').addEventListener('click', () => sortTable(2, '#reviews'));
 
 // Book Modal event listener
+// Book Modal event listener
 const bookModal = document.getElementById('bookModal');
-bookModal.addEventListener('show.bs.modal', function (event) {
-  const trigger = event.relatedTarget;
-  const mode = trigger ? trigger.getAttribute('data-mode') : 'add';
-  const modalTitle = bookModal.querySelector('#bookModalLabel');
+bookModal.addEventListener('show.bs.modal', function(event) {
+  const btn = event.relatedTarget;
+  const form = document.getElementById('bookForm');
   const submitBtn = bookModal.querySelector('button[type="submit"]');
-  if (mode === 'edit') {
-    modalTitle.textContent = 'Modificar Libro';
+  const id = btn ? btn.getAttribute('data-id') : null;
+
+  if (id) {
+    document.getElementById('bookId').value = id;
+    form.action = '/admin/book/' + id + '/edit';
+    document.getElementById('bookModalLabel').textContent = 'Editar Libro';
     submitBtn.textContent = 'Actualizar Libro';
+    form.querySelector('[name="title"]').value = btn.getAttribute('data-title');
+    form.querySelector('[name="author"]').value = btn.getAttribute('data-author');
+    form.querySelector('[name="genre"]').value = btn.getAttribute('data-genre');
+    form.querySelector('[name="isbn"]').value = btn.getAttribute('data-isbn');
+    form.querySelector('[name="coverUrl"]').value = btn.getAttribute('data-cover');
+    form.querySelector('[name="pages"]').value = btn.getAttribute('data-pages');
+    form.querySelector('[name="language"]').value = btn.getAttribute('data-language');
+    form.querySelector('[name="publicationYear"]').value = btn.getAttribute('data-year');
+    form.querySelector('[name="synopsis"]').value = btn.getAttribute('data-synopsis');
   } else {
-    modalTitle.textContent = 'Registrar un Nuevo Libro';
+    document.getElementById('bookId').value = '';
+    form.action = '/admin/book/new';
+    form.reset();
+    document.getElementById('bookModalLabel').textContent = 'Registrar un Nuevo Libro';
     submitBtn.textContent = 'Publicar Libro';
   }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hash = window.location.hash;
+    const savedTab = sessionStorage.getItem('activeTab');
+    
+    const targetTab = hash || savedTab;
+    
+    if (targetTab) {
+        const tabEl = document.querySelector(`button[data-bs-target="${targetTab}"]`);
+        if (tabEl) {
+            const tab = new bootstrap.Tab(tabEl);
+            tab.show();
+        }
+    }
+    
+    if (hash) {
+        history.replaceState(null, null, window.location.pathname);
+    }
+
+    document.querySelectorAll('button[data-bs-toggle="tab"]').forEach(function(tabEl) {
+        tabEl.addEventListener('shown.bs.tab', function(e) {
+            const target = e.target.getAttribute('data-bs-target');
+            sessionStorage.setItem('activeTab', target);
+        });
+    });
 });

@@ -26,6 +26,7 @@ public class AdminController {
         model.addAttribute("books", bookRepository.findAll());
         model.addAttribute("users", userRepository.findAll());
         model.addAttribute("reviews", reviewRepository.findAll());
+        model.addAttribute("bookCount", bookRepository.count());
         return "admin";
     }
 
@@ -34,6 +35,7 @@ public class AdminController {
                           @RequestParam String author,
                           @RequestParam String genre,
                           @RequestParam String coverUrl,
+                          @RequestParam Long isbn,
                           @RequestParam int pages,
                           @RequestParam String language,
                           @RequestParam int publicationYear,
@@ -43,6 +45,7 @@ public class AdminController {
         book.setAuthor(author);
         book.setGenre(genre);
         book.setCoverUrl(coverUrl);
+        book.setIsbn(isbn);
         book.setPages(pages);
         book.setLanguage(language);
         book.setPublicationYear(publicationYear);
@@ -62,12 +65,36 @@ public class AdminController {
     @PostMapping("/admin/user/{id}/delete")
     public String deleteUser(@PathVariable Long id) {
         userRepository.deleteById(id);
-        return "redirect:/admin";
+        return "redirect:/admin#users";
     }
 
     @PostMapping("/admin/review/{id}/delete")
     public String deleteReview(@PathVariable Long id) {
         reviewRepository.deleteById(id);
+        return "redirect:/admin#reviews";
+    }
+
+        @PostMapping("/admin/book/{id}/edit")
+    public String editBook(@PathVariable Long id,
+                        @RequestParam String title,
+                        @RequestParam String author,
+                        @RequestParam String genre,
+                        @RequestParam Long isbn,
+                        @RequestParam String coverUrl,
+                        @RequestParam int pages,
+                        @RequestParam String language,
+                        @RequestParam int publicationYear,
+                        @RequestParam String synopsis) {
+        Book book = bookRepository.findById(id).orElseThrow();
+        book.setTitle(title);
+        book.setAuthor(author);
+        book.setGenre(genre);
+        book.setCoverUrl(coverUrl);
+        book.setPages(pages);
+        book.setLanguage(language);
+        book.setPublicationYear(publicationYear);
+        book.setSynopsis(synopsis);
+        bookRepository.save(book);
         return "redirect:/admin";
     }
 }
