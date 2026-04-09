@@ -21,13 +21,20 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        System.out.println(">>> INTENTANDO LOGIN CON: " + email);
         User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado: " + email));
+                .orElseThrow(() -> {
+                    System.out.println(">>> USUARIO NO ENCONTRADO");
+                    return new UsernameNotFoundException("No encontrado: " + email);
+                });
+        System.out.println(">>> USUARIO ENCONTRADO: " + user.getUserName());
+        System.out.println(">>> PASSWORD EN BD: " + user.getUserPassword());
+        System.out.println(">>> ROL: " + user.getUserRole());
 
         return org.springframework.security.core.userdetails.User
                 .withUsername(user.getUserEmail())
                 .password(user.getUserPassword())
-                .authorities("ROLE" + (user.getUserRole()))
+                .authorities("ROLE_" + user.getUserRole())
                 .build();
     }
 
