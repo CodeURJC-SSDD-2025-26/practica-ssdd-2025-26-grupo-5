@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BOOKIFY | Tu Biblioteca Personal</title>
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/css/style.css">
@@ -14,57 +16,57 @@
 
 <body>
 
-<!-- Header -->
-{{>header}}
-<!-- End Hearder -->
+  <!-- Header -->
+  {{>header}}
+  <!-- End Hearder -->
 
-<div class="welcome-section py-2">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <h2 class="welcoming-section">Bienvenido a Bookify</h2>
-        <p class="text-muted">Explora tu biblioteca, descubre nuevos mundos y comparte tu pasión por la lectura.</p>
-      </div>
+  <div class="welcome-section py-2">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2 class="welcoming-section">Bienvenido a Bookify</h2>
+          <p class="text-muted">Explora tu biblioteca, descubre nuevos mundos y comparte tu pasión por la lectura.</p>
+        </div>
 
-      <div class="col-md-6 text-center">
-        <img src="/imgs/img1.jpeg" class="img-fluid rounded shadow w-75 " alt="Libros">
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="mb-5"></div>
-
-<section class="container mb-5">
-  <div class="col-md-12">
-    <h4 class="mb-4">Recomendaciones</h4>
-    
-    <div class="row row-cols-1 row-cols-md-4 g-0">
-      {{#books}}
-      <div class="col">
-        <div class="card h-100 book-cover">
-          <a href="/book/{{id}}">
-            <div class="book-img-container">
-              <img src="{{coverUrl}}" class="card-img-top book-img" alt="{{title}}">
-            </div>
-          </a>
-          <div class="card-body px-0">
-            <a href="/book/{{id}}" class="text-decoration-none text-dark">
-              <h6 class="card-title fw-bold mb-1">{{title}}</h6>
-            </a>
-            <p class="card-text small text-muted">{{author}}</p>
-            <a href="/book/{{id}}" class="btn btn-sm btn-custom w-100">Quiero leerlo</a>
-          </div>
+        <div class="col-md-6 text-center">
+          <img src="/imgs/img1.jpeg" class="img-fluid rounded shadow w-75 " alt="Libros">
         </div>
       </div>
-      {{/books}}
-      
-      {{^books}}
-      <p>No hay recomendaciones disponibles en este momento.</p>
-      {{/books}}
     </div>
   </div>
-</section>
+
+  <div class="mb-5"></div>
+
+  <section class="container mb-5">
+    <div class="col-md-12">
+      <h4 class="mb-4">Recomendaciones</h4>
+
+      <div class="row row-cols-1 row-cols-md-4 g-0">
+        {{#books}}
+        <div class="col">
+          <div class="card h-100 book-cover">
+            <a href="/book/{{id}}">
+              <div class="book-img-container">
+                <img src="{{coverUrl}}" class="card-img-top book-img" alt="{{title}}">
+              </div>
+            </a>
+            <div class="card-body px-0">
+              <a href="/book/{{id}}" class="text-decoration-none text-dark">
+                <h6 class="card-title fw-bold mb-1">{{title}}</h6>
+              </a>
+              <p class="card-text small text-muted">{{author}}</p>
+              <a href="/book/{{id}}" class="btn btn-sm btn-custom w-100">Quiero leerlo</a>
+            </div>
+          </div>
+        </div>
+        {{/books}}
+
+        {{^books}}
+        <p>No hay recomendaciones disponibles en este momento.</p>
+        {{/books}}
+      </div>
+    </div>
+  </section>
   <!-- Top read books -->
   <div class="top-reads-section p-4 rounded shadow-sm mt-5">
     <h4 class="mb-4 fw-bold">Libros Más Leídos</h4>
@@ -88,16 +90,21 @@
 
     </div>
   </div>
-</section>
+  </section>
 
-<!-- Footer -->
-{{>footer}}
-<!-- End Footer-->
+  <!-- Footer -->
+  {{>footer}}
+  <!-- End Footer-->
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-<script src="/js/index.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="/js/index.js"></script>
 
 </body>
+
 </html>
