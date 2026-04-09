@@ -11,8 +11,8 @@
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../static/css/style.css">
-  <link rel="stylesheet" href="../static/css/profile.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/profile.css">
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -30,21 +30,23 @@
 
     </div>
   </header>
-
+  {{#user}}
   <div class="container-fluid mb-5 py-4">
 
     <!-- Profile Section -->
+    
     <div class="row mb-4 align-items-center">
       <div class="col-md-4 text-center">
-        <img src="{{user_profile_pic}}" class="rounded-circle shadow mb-3" alt="Foto de perfil" width="150"
+        <img src="{{userProfilePic}}" class="rounded-circle shadow mb-3" alt="Foto de perfil" width="150"
           height="150">
-        <h2 class="fw-bold brand-color">{{user_name}}</h2>
-        <p class="text-muted">{{short_desc}} | {{user_location}}</p>
-        <p class="small">Miembro desde {{user_since}}</p>
+        <h2 class="fw-bold brand-color">{{userName}}</h2>
+        <p class="text-muted">{{shortDesc}} | {{userLocation}}</p>
+      
+        <p class="small">Miembro desde {{userSince}}</p>
         <button class="btn btn-custom btn-sm me-2" data-bs-toggle="modal" data-bs-target="#editProfileModal">Editar
           Perfil</button>
         <div class="mb-5 allign-items-center"></div>
-        <a href="/login" class="btn btn-custom btn-outline-secondary btn-sm me-2">Cerrar Sesión</a>
+        <a href="/logout" class="btn btn-custom btn-outline-secondary btn-sm me-2">Cerrar Sesión</a>
       </div>
       <!-- Personal info such as email, phone number, born date and favorite genres-->
       <div class="col-md-8">
@@ -53,41 +55,41 @@
           <div class="row mb-3">
             <div class="col-md-6">
               <p class="text-muted small mb-1">Correo Electrónico</p>
-              <p class="fw-semibold">{{user_email}}</p>
+              <p class="fw-semibold">{{userEmail}}</p>
             </div>
             <div class="col-md-6">
               <p class="text-muted small mb-1">Teléfono</p>
-              <p class="fw-semibold">{{user_phone}}</p>
+              <p class="fw-semibold">{{userPhone}}</p>
             </div>
           </div>
           <div class="row mb-3">
             <div class="col-md-6">
               <p class="text-muted small mb-1">Fecha de Nacimiento</p>
-              <p class="fw-semibold">{{user_birthday}}</p>
+              <p class="fw-semibold">{{userBirthday}}</p>
             </div>
             <div class="col-md-6">
               <p class="text-muted small mb-1">Género Favorito</p>
-              <p class="fw-semibold">{{user_fav_genres}}</p>
+              <p class="fw-semibold">{{userFavGenres}}</p>
             </div>
           </div>
           <div>
             <p class="text-muted small mb-1">Biografía</p>
-            <p class="fw-semibold">{{user_bio}}</p>
+            <p class="fw-semibold">{{userBio}}</p>
           </div>
         </div>
 
         <div class="card border-0 shadow-sm p-4 mt-3">
           <div class="row text-center">
             <div class="col-md-4">
-              <h4 class="fw-bold brand-color">{{user_books_read}}</h4>
+              <h4 class="fw-bold brand-color">{{userBooksRead}}</h4>
               <p class="text-muted small">Libros Leídos</p>
             </div>
             <div class="col-md-4">
-              <h4 class="fw-bold brand-color">{{user_books_in_progress}}</h4>
+              <h4 class="fw-bold brand-color">{{userBooksInProgress}}</h4>
               <p class="text-muted small">En Progreso</p>
             </div>
             <div class="col-md-4">
-              <h4 class="fw-bold brand-color">{{user_books_wishlist}}</h4>
+              <h4 class="fw-bold brand-color">{{userBooksWishlist}}</h4>
               <p class="text-muted small">Deseados</p>
             </div>
           </div>
@@ -119,11 +121,12 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body p-4 modal-body-custom">
+          
           <div class="card border-0 shadow-sm p-4">
 
             <form action="edit_profile" method="post" enctype="multipart/form-data" class="row g-3">
               <div class="col-md-12 text-center mb-2">
-                <img src="{{user_profile_pic}}" class="rounded-circle shadow mb-2" alt="Foto de perfil"width="100" height="100">
+                <img src="{{userProfilePic}}" class="rounded-circle shadow mb-2" alt="Foto de perfil"width="100" height="100">
                 <div>
                   <label class="form-label small fw-bold d-block">Foto de perfil</label>
                   <input type="file" name="profile_pic" class="form-control form-control-sm w-auto mx-auto" accept="image/*">
@@ -131,27 +134,27 @@
               </div>
               <div class="col-md-6">
                 <label class="form-label small fw-bold">Nombre de usuario</label>
-                <input type="text" name="profile_name" class="form-control" placeholder="{{user_name}}">
+                <input type="text" name="profile_name" class="form-control" placeholder="{{userName}}">
               </div>
               <div class="col-md-6">
                 <label class="form-label small fw-bold">Correo Electrónico</label>
-                <input type="email" name="profile_email" class="form-control" placeholder="{{user_email}}">
+                <input type="email" name="profile_email" class="form-control" placeholder="{{userEmail}}">
               </div>
               <div class="col-md-6">
                 <label class="form-label small fw-bold">Teléfono</label>
-                <input type="tel" name="profile_phone" class="form-control" placeholder="{{user_phone}}">
+                <input type="tel" name="profile_phone" class="form-control" placeholder="{{userPhone}}">
               </div>
               <div class="col-md-6">
                 <label class="form-label small fw-bold">Fecha de Nacimiento</label>
-                <input type="date" name="profile_dob" class="form-control">
+                <input type="date" name="profile_dob" class="form-control" placeholder="{{userBirthday}}">
               </div>
               <div class="col-md-6">
                 <label class="form-label small fw-bold">Ubicación</label>
-                <input type="text" name="profile_location" class="form-control" placeholder="{{user_location}}">
+                <input type="text" name="profile_location" class="form-control" placeholder="{{userLocation}}">
               </div>
               <div class="col-md-6">
                 <label class="form-label small fw-bold">Género Favorito</label>
-                <input type="text" name="profile_fav_genre" class="form-control" placeholder="{{user_fav_genre}}">
+                <input type="text" name="profile_fav_genre" class="form-control" placeholder="{{userFavGenres}}">
               </div>
               <div class="col-md-12">
                 <label class="form-label small fw-bold">Biografía</label>
@@ -172,10 +175,12 @@
             </form>
           </div>
         </div>
+      
       </div>
     </div>
   </div>
   <!-- End Edit Profile Modal -->
+  {{/user}}
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
