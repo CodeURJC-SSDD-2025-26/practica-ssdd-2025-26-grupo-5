@@ -15,41 +15,44 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    @Autowired
-    private UserService userService;
+        @Autowired
+        private UserService userService;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+        @Autowired
+        private PasswordEncoder passwordEncoder;
 
-    @Bean
-    public DaoAuthenticationProvider authProvider() {
-        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setUserDetailsService(userService);
-        provider.setPasswordEncoder(passwordEncoder);
-        return provider;
-    }
+        @Bean
+        public DaoAuthenticationProvider authProvider() {
+                DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+                provider.setUserDetailsService(userService);
+                provider.setPasswordEncoder(passwordEncoder);
+                return provider;
+        }
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .authenticationProvider(authProvider())
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/css/**", "/js/**", "/imgs/**").permitAll()
-                        .requestMatchers("/login", "/register").permitAll()
-                        .requestMatchers("/profile/me").authenticated()
-                        .anyRequest().permitAll())
-                .formLogin(form -> form
-                        .loginPage("/login")
-                        .loginProcessingUrl("/login")
-                        .defaultSuccessUrl("/profile/me", true)
-                        .failureUrl("/login?error")
-                        .permitAll())
-                .logout(logout -> logout
-                        .logoutUrl("/logout")
-                        .logoutSuccessUrl("/login")
-                        .permitAll())
-                .csrf(csrf -> csrf.disable());
+        @Bean
+        public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+                http
+                                .authenticationProvider(authProvider())
+                                .authorizeHttpRequests(auth -> auth
+                                                .requestMatchers("/css/**", "/js/**", "/imgs/**").permitAll()
+                                                .requestMatchers("/", "/index", "/books/**").permitAll()
+                                                .requestMatchers("/login", "/signUp").permitAll()
+                                                .requestMatchers("/profile/me", "/myLibrary", "/collection/**")
+                                                .authenticated()
+                                                .anyRequest().authenticated() // el resto también requiere login
+                                )
+                                .formLogin(form -> form
+                                                .loginPage("/login")
+                                                .loginProcessingUrl("/login")
+                                                .defaultSuccessUrl("/profile/me", true)
+                                                .failureUrl("/login?error")
+                                                .permitAll())
+                                .logout(logout -> logout
+                                                .logoutUrl("/logout")
+                                                .logoutSuccessUrl("/login")
+                                                .permitAll())
+                                .csrf(csrf -> csrf.disable());
 
-        return http.build();
-    }
+                return http.build();
+        }
 }
