@@ -1,12 +1,14 @@
 package es.code_urjc_g5.bookify_project.models;
 
+import java.util.List;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.Getter;
 import lombok.Data;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
@@ -19,9 +21,6 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor //Necesario para usar el patrón builder, ya que proporciona un constructor con todos los argumentos que el builder necesita para crear una instancia de Book.
 public class Book {
-
-    
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -30,6 +29,7 @@ public class Book {
     private String genre;
     @Column(columnDefinition = "TEXT")
     private String synopsis;
+    private Long isbn;
     private String coverUrl;
     private int pages;
     private String language;
@@ -38,5 +38,8 @@ public class Book {
     private int reviewCount;
     @jakarta.persistence.Lob
     @jakarta.persistence.Column(columnDefinition = "LONGBLOB")
-    private byte[] pdfFile;    
+    private byte[] pdfFile;  
+    
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews;
 }

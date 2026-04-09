@@ -7,8 +7,8 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="../static/css/style.css">
-  <link rel="stylesheet" href="../static/css/admin.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/admin.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -18,7 +18,7 @@
   <div class="container d-block">
     <div class="d-flex align-items-center justify-content-between w-100 mb-3">
       <div>
-        <a class="navbar-brand fw-bold brand-color fst-italic" href="index.html">BOOKIFY</a>
+        <a class="navbar-brand fw-bold brand-color fst-italic" href="/">BOOKIFY</a>
         <span class="text-muted fw-normal">/ Modo Admin</span>
       </div>
 
@@ -29,7 +29,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Cerrar Sesión</a>
+            <a class="nav-link" href="/">Cerrar Sesión</a>
           </li>
         </ul>
       </div>
@@ -66,7 +66,7 @@
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h5 class="fw-bold">Gestión de Catálogo</h5>
         <div class="d-flex gap-3 align-items-center">
-          <span class="badge rounded-pill bg-dark">Total de Libros: 167</span>
+          <span class="badge rounded-pill bg-dark">Total de Libros: {{bookCount}}</span>
           <button class="btn btn-custom px-4" data-bs-toggle="modal" data-bs-target="#bookModal" data-mode="add">
             <i class="bi bi-plus-lg me-1"></i> Añadir Libro
           </button>
@@ -97,36 +97,41 @@
               </tr>
             </thead>
             <tbody>
+              {{#books}}
               <tr>
                 <td class="ps-4">
-                  <a href="bookDescription.html">
-                    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1490528560i/4671.jpg" alt="Portada" class="rounded shadow-sm img-portada">
+                  <a href="/book/{{id}}">
+                    <img src="{{coverUrl}}" alt="Portada" class="rounded shadow-sm img-portada">
                   </a>
                 </td>
-                <td class="text-truncate fw-bold">El Gran Gatsby</td>
-                <td class="text-truncate">F. Scott Fitzgerald</td>
-                <td><span class="badge bg-light text-dark border">Tragedia</span></td>
-                <td class="small text-muted">9783257691078</td>
+                <td class="text-truncate fw-bold">{{title}}</td>
+                <td class="text-truncate">{{author}}</td>
+                <td><span class="badge bg-light text-dark border">{{genre}}</span></td>
+                <td class="small text-muted">{{publicationYear}}</td>
                 <td class="text-end pe-4">
-                  <button class="btn btn-sm btn-outline-secondary border-0 me-1" data-bs-toggle="modal" data-bs-target="#bookModal" data-mode="edit" title="Editar"><i class="bi bi-pencil-square"></i></button>
-                  <button class="btn btn-sm btn-outline-danger border-0" title="Eliminar"><i class="bi bi-trash-fill"></i></button>
+                    <button class="btn btn-sm btn-outline-secondary border-0 me-1"
+                            data-bs-toggle="modal" data-bs-target="#bookModal"
+                            data-id="{{id}}"
+                            data-title="{{title}}"
+                            data-author="{{author}}"
+                            data-genre="{{genre}}"
+                            data-isbn="{{isbn}}"
+                            data-cover="{{coverUrl}}"
+                            data-pages="{{pages}}"
+                            data-language="{{language}}"
+                            data-year="{{publicationYear}}"
+                            data-synopsis="{{synopsis}}"
+                            title="Editar">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                  <form action="/admin/book/{{id}}/delete" method="post" style="display:inline">
+                    <button type="submit" class="btn btn-sm btn-outline-danger border-0" title="Eliminar">
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+                  </form>
                 </td>
               </tr>
-              <tr>
-                <td class="ps-4">
-                  <a href="bookDescription.html">
-                    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546071216i/5907.jpg" alt="Portada" class="rounded shadow-sm img-portada">
-                  </a>
-                </td>
-                <td class="text-truncate fw-bold">El Hobbit</td>
-                <td class="text-truncate">J.R.R. Tolkien</td>
-                <td><span class="badge bg-light text-dark border">Fantasía</span></td>
-                <td class="small text-muted">9780345445605</td>
-                <td class="text-end pe-4">
-                  <button class="btn btn-sm btn-outline-secondary border-0 me-1" data-bs-toggle="modal" data-bs-target="#bookModal" title="Editar"><i class="bi bi-pencil-square"></i></button>
-                  <button class="btn btn-sm btn-outline-danger border-0" title="Eliminar"><i class="bi bi-trash-fill"></i></button>
-                </td>
-              </tr>
+              {{/books}}
             </tbody>
           </table>
         </div>
@@ -143,23 +148,48 @@
           </div>
           <div class="modal-body p-4 modal-body-custom">
             <div class="card border-0 shadow-sm p-4">
-              <form class="row g-3">
-                <div class="col-md-6"><label class="form-label small fw-bold">Título</label><input type="text" class="form-control" placeholder="Ej.: El Hobbit" required></div>
-                <div class="col-md-6"><label class="form-label small fw-bold">Autor</label><input type="text" class="form-control" placeholder="J.R.R. Tolkien" required></div>
-                <div class="col-md-4"><label class="form-label small fw-bold">Género</label><input type="text" class="form-control" placeholder="Fantasía" required></div>
-                <div class="col-md-4"><label class="form-label small fw-bold">ISBN</label><input type="text" class="form-control" placeholder="9780345445605" pattern="\d{10,13}" required></div>
-                <div class="col-md-4"><label class="form-label small fw-bold">URL de la Portada</label><input type="text" class="form-control" placeholder="https://..." required></div>
-                <div class="col-md-4"><label class="form-label small fw-bold">Páginas</label><input type="number" class="form-control" placeholder="310" required></div>
-                <div class="col-md-4"><label class="form-label small fw-bold">Idioma</label><input type="text" class="form-control" placeholder="Español" required></div>
-                <div class="col-md-4"><label class="form-label small fw-bold">Fecha de Publicación</label><input type="date" class="form-control" placeholder="2026" required></div>
-                <div class="col-md-12">
-                  <label class="form-label small fw-bold">Sinopsis</label>
-                  <textarea class="form-control" placeholder="Escribe aquí la sinopsis completa del libro..." rows="4" required></textarea>
-                </div>
-                <div class="col-12 mt-4 d-flex justify-content-end gap-2">
-                  <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Cancelar</button>
-                  <button type="submit" class="btn btn-custom px-5">Publicar Libro</button>
-                </div>
+              <form class="row g-3" id="bookForm" action="/admin/book/new" method="post">
+                <input type="hidden" name="id" id="bookId">
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold">Título</label>
+                    <input type="text" name="title" class="form-control" placeholder="Ej.: El Hobbit" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold">Autor</label>
+                    <input type="text" name="author" class="form-control" placeholder="J.R.R. Tolkien" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small fw-bold">Género</label>
+                    <input type="text" name="genre" class="form-control" placeholder="Fantasía" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small fw-bold">ISBN</label>
+                    <input type="text" name="isbn" class="form-control" placeholder="9780345445605" pattern="\d{10,13}" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small fw-bold">URL de la Portada</label>
+                    <input type="text" name="coverUrl" class="form-control" placeholder="https://..." required>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small fw-bold">Páginas</label>
+                    <input type="number" name="pages" class="form-control" placeholder="310" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small fw-bold">Idioma</label>
+                    <input type="text" name="language" class="form-control" placeholder="Español" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small fw-bold">Año de Publicación</label>
+                    <input type="number" name="publicationYear" class="form-control" placeholder="2024" required>
+                  </div>
+                  <div class="col-md-12">
+                    <label class="form-label small fw-bold">Sinopsis</label>
+                    <textarea name="synopsis" class="form-control" rows="4" required></textarea>
+                  </div>
+                  <div class="col-12 mt-4 d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-custom px-5">Publicar Libro</button>
+                  </div>
               </form>
             </div>
           </div>
@@ -192,40 +222,31 @@
                 <th class="col-usuario" id="sort-user">USUARIO <i class="bi bi-sort-alpha-down"></i></th>
                 <th class="col-libro" id="sort-book">LIBRO <i class="bi bi-sort-alpha-down"></i></th>
                 <th class="col-comentario">COMENTARIO</th>
+                <th class="col-calificacion">CALIFICACIÓN</th>
                 <th class="text-end pe-4 col-acciones">ACCIONES</th>
               </tr>
             </thead>
             <tbody>
+              {{#reviews}}
               <tr>
-                <td class="ps-4"><span class="badge rounded-pill bg-success">Aceptado</span></td>
-                <td><strong>@lector_infinito</strong></td>
-                <td class="fst-italic">Don Quijote</td>
-                <td class="small text-muted">"La mejor edición que he leído hasta ahora."</td>
+                <td class="ps-4">
+                  {{#isAcepted}}<span class="badge rounded-pill bg-success">Aceptado</span>{{/isAcepted}}
+                  {{#isPendiente}}<span class="badge rounded-pill bg-warning text-dark">Pendiente</span>{{/isPendiente}}
+                  {{#isReportado}}<span class="badge rounded-pill bg-danger">Reportado</span>{{/isReportado}}
+                </td>
+                <td class="ps-4"><strong>@{{#user}}{{userName}}{{/user}}</strong></td>
+                <td class="fst-italic">{{#book}}{{title}}{{/book}}</td>
+                <td class="small text-muted">{{reviewText}}</td>
+                <td><span class="badge bg-secondary">{{reviewRating}} / 10</span></td>
                 <td class="text-end pe-4">
-                  <button class="btn btn-sm btn-outline-success border-0"><i class="bi bi-check-circle-fill"></i></button>
-                  <button class="btn btn-sm btn-outline-danger border-0"><i class="bi bi-trash-fill"></i></button>
+                  <form action="/admin/review/{{id}}/delete" method="post" style="display:inline">
+                    <button type="submit" class="btn btn-sm btn-outline-danger border-0" title="Eliminar">
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+                  </form>
                 </td>
               </tr>
-              <tr>
-                <td class="ps-4"><span class="badge rounded-pill bg-warning text-dark">Pendiente</span></td>
-                <td><strong>@carla_reads</strong></td>
-                <td class="fst-italic">Cien años de soledad</td>
-                <td class="small text-muted">"Mágico, pero confuso con tantos nombres."</td>
-                <td class="text-end pe-4">
-                  <button class="btn btn-sm btn-outline-success border-0"><i class="bi bi-check-circle-fill"></i></button>
-                  <button class="btn btn-sm btn-outline-danger border-0"><i class="bi bi-trash-fill"></i></button>
-                </td>
-              </tr>
-              <tr>
-                <td class="ps-4"><span class="badge rounded-pill bg-danger">Reportado</span></td>
-                <td><strong>@lucia_books</strong></td>
-                <td class="fst-italic">Orgullo y Prejuicio</td>
-                <td class="small text-muted">"Contiene spoilers del final sin avisar."</td>
-                <td class="text-end pe-4">
-                  <button class="btn btn-sm btn-outline-success border-0"><i class="bi bi-check-circle-fill"></i></button>
-                  <button class="btn btn-sm btn-outline-danger border-0"><i class="bi bi-trash-fill"></i></button>
-                </td>
-              </tr>
+              {{/reviews}}
             </tbody>
           </table>
         </div>
@@ -246,91 +267,34 @@
       </div>
 
       <div class="row row-cols-1 row-cols-md-3 g-4">
+        {{#users}}
         <div class="col">
           <div class="card h-100 border-0 shadow-sm p-3 user-card">
             <div class="d-flex align-items-center">
               <div class="user-avatar-container me-3 shadow-sm">
-                <img src="https://img.freepik.com/psd-gratis/render-3d-personaje-avatar_23-2150611722.jpg?semt=ais_user_personalization&w=740&q=80" alt="User" class="user-avatar-img">
+                {{#userProfilePic}}
+                <img src="{{userProfilePic}}" alt="User" class="user-avatar-img">
+                {{/userProfilePic}}
+                {{^userProfilePic}}
+                <img src="/images/default-avatar.png" alt="User" class="user-avatar-img">
+                {{/userProfilePic}}
               </div>
               <div class="overflow-hidden">
-                <h6 class="mb-0 text-truncate fw-bold brand-color">Juan Pérez</h6>
-                <small class="text-muted d-block text-truncate">juan.perez@gmail.com</small>
+                <h6 class="mb-0 text-truncate fw-bold brand-color">{{userName}}</h6>
+                <small class="text-muted d-block text-truncate">{{userEmail}}</small>
               </div>
             </div>
             <div class="d-flex gap-2 mt-4">
-              <a href="profile.html" class="btn btn-sm btn-outline-secondary w-100 rounded-pill">Ver Perfil</a>
-              <button class="btn btn-sm btn-outline-danger px-3 rounded-pill" title="Ban User"><i class="bi bi-person-x-fill"></i></button>
+              <a href="/user/{{id}}" class="btn btn-sm btn-outline-secondary w-100 rounded-pill">Ver Perfil</a>
+              <form action="/admin/user/{{id}}/delete" method="post" style="display:inline">
+                <button type="submit" class="btn btn-sm btn-outline-danger px-3 rounded-pill" title="Eliminar usuario">
+                  <i class="bi bi-person-x-fill"></i>
+                </button>
+              </form>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm p-3 user-card">
-            <div class="d-flex align-items-center">
-              <div class="user-avatar-container me-3 shadow-sm">
-                <img src="https://img.freepik.com/psd-gratis/render-3d-personaje-avatar_23-2150611740.jpg?semt=ais_hybrid&w=740&q=80" alt="User" class="user-avatar-img">
-              </div>
-              <div class="overflow-hidden">
-                <h6 class="mb-0 text-truncate fw-bold brand-color">Elena Gómez</h6>
-                <small class="text-muted d-block text-truncate">elena.gomez@outlook.com</small>
-              </div>
-            </div>
-            <div class="d-flex gap-2 mt-4">
-              <a href="profile.html" class="btn btn-sm btn-outline-secondary w-100 rounded-pill">Ver Perfil</a>
-              <button class="btn btn-sm btn-outline-danger px-3 rounded-pill" title="Ban User"><i class="bi bi-person-x-fill"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm p-3 user-card">
-            <div class="d-flex align-items-center">
-              <div class="user-avatar-container me-3 shadow-sm">
-                <img src="https://img.freepik.com/psd-gratis/representacion-3d-avatar_23-2150833562.jpg" alt="User" class="user-avatar-img">
-              </div>
-              <div class="overflow-hidden">
-                <h6 class="mb-0 text-truncate fw-bold brand-color">Marcos Ruiz</h6>
-                <small class="text-muted d-block text-truncate">m.ruiz88@gmail.com</small>
-              </div>
-            </div>
-            <div class="d-flex gap-2 mt-4">
-              <a href="profile.html" class="btn btn-sm btn-outline-secondary w-100 rounded-pill">Ver Perfil</a>
-              <button class="btn btn-sm btn-outline-danger px-3 rounded-pill" title="Ban User"><i class="bi bi-person-x-fill"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm p-3 user-card">
-            <div class="d-flex align-items-center">
-              <div class="user-avatar-container me-3 shadow-sm">
-                <img src="https://img.freepik.com/psd-gratis/representacion-3d-avatar_23-2150833536.jpg?semt=ais_hybrid&w=740&q=80" alt="User" class="user-avatar-img">
-              </div>
-              <div class="overflow-hidden">
-                <h6 class="mb-0 text-truncate fw-bold brand-color">Sofía Castro</h6>
-                <small class="text-muted d-block text-truncate">sofi_castro@yahoo.es</small>
-              </div>
-            </div>
-            <div class="d-flex gap-2 mt-4">
-              <a href="profile.html" class="btn btn-sm btn-outline-secondary w-100 rounded-pill">Ver Perfil</a>
-              <button class="btn btn-sm btn-outline-danger px-3 rounded-pill" title="Ban User"><i class="bi bi-person-x-fill"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm p-3 user-card">
-            <div class="d-flex align-items-center">
-              <div class="user-avatar-container me-3 shadow-sm">
-                <img src="https://img.freepik.com/psd-gratis/representacion-3d-avatar_23-2150833554.jpg" alt="User" class="user-avatar-img">
-              </div>
-              <div class="overflow-hidden">
-                <h6 class="mb-0 text-truncate fw-bold brand-color">Roberto Sanz</h6>
-                <small class="text-muted d-block text-truncate">rsanz_biblios@gmail.com</small>
-              </div>
-            </div>
-            <div class="d-flex gap-2 mt-4">
-              <a href="profile.html" class="btn btn-sm btn-outline-secondary w-100 rounded-pill">Ver Perfil</a>
-              <button class="btn btn-sm btn-outline-danger px-3 rounded-pill" title="Ban User"><i class="bi bi-person-x-fill"></i></button>
-            </div>
-          </div>
-        </div>
+        {{/users}}
       </div>
     </div>
     <!-- End Users Tabpanel -->
@@ -339,24 +303,12 @@
 </main>
 
 <!-- Footer -->
-<footer class="footer-section mt-5 py-4 ">
-  <div class="container text-center">
-    <p class="mb-2 fw-bold">Bookify</p>
-    <p class="small mb-2">Tu biblioteca digital personal</p>
-    <div class="mb-2 row-cols-auto">
-      <a href="aboutUs.html" class="footer-links">Sobre nosotros</a> |
-      <a href="contact.html" class="footer-links">Contacto</a> |
-      <a href="pp.html" class="footer-links">Política de privacidad</a> |
-      <a href="ToS.html" class="footer-links">Términos de servicio</a>
-    </div>
-    <small>© 2026 Bookify. Todos los derechos reservados.</small>
-  </div>
-</footer>
-<!-- End Footer-->
+{{>footer}}
+<!-- End Footer -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="../static/js/admin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/js/admin.js"></script>
 
 </body>
 </html>

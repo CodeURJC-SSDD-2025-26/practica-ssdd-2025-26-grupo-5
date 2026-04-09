@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.FetchType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,9 +23,15 @@ public class Review {
     private String reviewText;
     private int reviewRating;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Book book;
+
+    private String status = "PENDIENTE";
+
+    public boolean isAcepted() { return "ACEPTADO".equals(status); }
+    public boolean isPendiente() { return "PENDIENTE".equals(status); }
+    public boolean isReportado() { return "REPORTADO".equals(status); }
 }
