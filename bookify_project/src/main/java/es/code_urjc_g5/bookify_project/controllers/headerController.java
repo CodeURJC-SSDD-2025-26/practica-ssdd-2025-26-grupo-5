@@ -5,8 +5,5 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class headerController {
-    @GetMapping("/profile")
-    public String privacyPolicy() {
-        return "profile";
-    }
+    
 }
