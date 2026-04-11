@@ -1,8 +1,10 @@
 package es.code_urjc_g5.bookify_project;
 
 import es.code_urjc_g5.bookify_project.models.Book;
+import es.code_urjc_g5.bookify_project.models.Collection;
 import es.code_urjc_g5.bookify_project.models.Review;
 import es.code_urjc_g5.bookify_project.models.User;
+import es.code_urjc_g5.bookify_project.repositories.CollectionRepository;
 import es.code_urjc_g5.bookify_project.repositories.UserRepository;
 import es.code_urjc_g5.bookify_project.repositories.ReviewRepository;
 import es.code_urjc_g5.bookify_project.repositories.BookRepository;
@@ -22,6 +24,9 @@ public class DataInitializer implements CommandLineRunner {
 
     @Autowired
     private ReviewRepository reviewRepository;
+
+    @Autowired
+    private CollectionRepository collectionRepository;
 
     @Override
     public void run(String... args) {
@@ -103,7 +108,18 @@ public class DataInitializer implements CommandLineRunner {
         User user2 = new User();
         user2.setUserName("carla_reads");
         user2.setUserEmail("carla@gmail.com");
+        user2.setUserPhone("654321987");
+        user2.setUserBirthday("14/08/1997");
+        user2.setUserLocation("barcelona");
+        user2.setUserFavGenres("Fantasía, Romance");
+        user2.setUserBio("Lectora empedernida y amante de las sagas largas.");
+        user2.setUserProfilePic("https://cdn-icons-png.flaticon.com/512/194/194935.png");
         user2.setUserPassword("1234");
+        user2.setShortDesc("Siempre con un libro en la mochila");
+        user2.setUserSince("2025");
+        user2.setUserBooksRead(12);
+        user2.setUserBooksInProgress(2);
+        user2.setUserBooksWishlist(8);
         user2.setUserRole("USER");
         userRepository.save(user2);
 
@@ -121,5 +137,26 @@ public class DataInitializer implements CommandLineRunner {
         review2.setBook(book2);
         review2.setUser(user2);
         reviewRepository.save(review2);
+
+        // Colecciones de prueba
+        Collection coleccion1 = new Collection();
+        coleccion1.setCollectionName("Mis Favoritas");
+        coleccion1.setUser(user1);
+        coleccion1.getBooks().add(book);
+        coleccion1.getBooks().add(book2);
+        collectionRepository.save(coleccion1);
+
+        Collection coleccion2 = new Collection();
+        coleccion2.setCollectionName("Lista de Deseos");
+        coleccion2.setUser(user2);
+        coleccion2.getBooks().add(book2);
+        collectionRepository.save(coleccion2);
+
+        Collection coleccion3 = new Collection();
+        coleccion3.setCollectionName("Tolkien Universe");
+        coleccion3.setUser(user);
+        coleccion3.getBooks().add(book);
+        coleccion3.getBooks().add(book2);
+        collectionRepository.save(coleccion3);
     }
 }
