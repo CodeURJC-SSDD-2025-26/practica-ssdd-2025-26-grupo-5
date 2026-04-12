@@ -2,16 +2,27 @@ package es.code_urjc_g5.bookify_project.controllers;
 
 import java.util.Optional;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+
 import es.code_urjc_g5.bookify_project.models.Book;
 import es.code_urjc_g5.bookify_project.models.Review;
+import es.code_urjc_g5.bookify_project.models.User;
 import es.code_urjc_g5.bookify_project.repositories.BookRepository;
+import es.code_urjc_g5.bookify_project.repositories.CollectionRepository;
 import es.code_urjc_g5.bookify_project.repositories.ReviewRepository;
+import es.code_urjc_g5.bookify_project.services.UserService;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import es.code_urjc_g5.bookify_project.models.Collection;
 
 @Controller
 public class BookController {
@@ -22,8 +33,13 @@ public class BookController {
     @Autowired
     private ReviewRepository reviewRepository;
 
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private CollectionRepository collectionRepository;
+
     @GetMapping("/book/{id}")
-    public String bookDescription(@PathVariable Long id, Model model) {
+    public String bookDescription(@PathVariable Long id, Model model, Authentication authentication) {
         Optional<Book> optionalBook = bookRepository.findById(id);
         if (optionalBook.isPresent()) {
             Book book = optionalBook.get();
@@ -31,6 +47,16 @@ public class BookController {
 
             model.addAttribute("book", book);
             model.addAttribute("reviews", reviews);
+
+            // Shows collections only if user is logged in
+            if (authentication != null && authentication.isAuthenticated()) {
+                Optional<User> userLoggedIn = userService.findByEmail(authentication.getName());
+                if (userLoggedIn.isPresent()) {
+                    User user = userLoggedIn.get();
+                    model.addAttribute("userCollections", collectionRepository.findByUser(user));
+                    model.addAttribute("loggedIn", true);
+                }
+            }
 
             int[] distribution = new int[10];
             for (Review r : reviews) {
@@ -42,7 +68,8 @@ public class BookController {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < distribution.length; i++) {
                 sb.append(distribution[i]);
-                if (i < distribution.length - 1) sb.append(",");
+                if (i < distribution.length - 1)
+                    sb.append(",");
             }
             model.addAttribute("reviewsDistribution", sb.toString());
             return "bookDescription";
@@ -53,15 +80,16 @@ public class BookController {
     @GetMapping("/book/{id}/pdf")
     public ResponseEntity<byte[]> downloadBookPdf(@PathVariable Long id) {
         Optional<Book> optionalBook = bookRepository.findById(id);
-        
+
         if (optionalBook.isPresent() && optionalBook.get().getPdfFile() != null) {
             Book book = optionalBook.get();
             return ResponseEntity.ok()
                     .header(HttpHeaders.CONTENT_TYPE, "application/pdf")
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + book.getTitle().replace(" ", "_") + ".pdf\"")
+                    .header(HttpHeaders.CONTENT_DISPOSITION,
+                            "attachment; filename=\"" + book.getTitle().replace(" ", "_") + ".pdf\"")
                     .body(book.getPdfFile());
         }
-        
+
         return ResponseEntity.notFound().build();
     }
 
@@ -79,8 +107,8 @@ public class BookController {
 
     @PostMapping("/book/{id}/review")
     public String addReview(@PathVariable Long id,
-                            @RequestParam String reviewText,
-                            @RequestParam int reviewRating) {
+            @RequestParam String reviewText,
+            @RequestParam int reviewRating) {
         Optional<Book> optionalBook = bookRepository.findById(id);
         if (optionalBook.isPresent()) {
             Book book = optionalBook.get();
@@ -94,12 +122,35 @@ public class BookController {
             List<Review> allReviews = reviewRepository.findByBook(book);
             book.setReviewCount(allReviews.size());
             double avgScore = allReviews.stream()
-                .mapToInt(Review::getReviewRating)
-                .average()
-                .orElse(0.0);
+                    .mapToInt(Review::getReviewRating)
+                    .average()
+                    .orElse(0.0);
             book.setScore(Math.round(avgScore * 10.0) / 10.0);
             bookRepository.save(book);
         }
         return "redirect:/book/" + id;
     }
+
+    @PostMapping("/collection/{collectionId}/addBook/{bookId}")
+    public String addBookToCollection(@PathVariable Long collectionId, @PathVariable Long bookId,
+            Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            Optional<User> userLoggedIn = userService.findByEmail(authentication.getName());
+            if (userLoggedIn.isPresent()) {
+                User user = userLoggedIn.get();
+                Optional<Collection> optionalCollection = collectionRepository.findById(collectionId);
+                Optional<Book> optionalBook = bookRepository.findById(bookId);
+                if (optionalCollection.isPresent() && optionalBook.isPresent()) {
+                    Collection collection = optionalCollection.get();
+                    Book book = optionalBook.get();
+                    if (!collection.getBooks().contains(book)) {
+                        collection.getBooks().add(book);
+                        collectionRepository.save(collection);
+                    }
+                }
+            }
+        }
+        return "redirect:/book/" + bookId; // Redirect to the book page after adding to collection
+    }
+
 }
