@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import es.code_urjc_g5.bookify_project.models.User;
 import es.code_urjc_g5.bookify_project.repositories.CollectionRepository;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class myLibraryController {
@@ -66,4 +68,22 @@ public class myLibraryController {
 
         return "myLibrary";
     }
+
+    @PostMapping("/collection/new")
+    public String createNewCollection(@RequestParam String collectionName, Authentication authentication,
+            @RequestParam(required = false) String redirect) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return "redirect:/login";
+        }
+        String email = authentication.getName();
+        User user = userService.findByEmail(email).orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        Collection newCollection = new Collection();
+        newCollection.setCollectionName(collectionName);
+        newCollection.setUser(user);
+        collectionRepository.save(newCollection);
+
+        return "redirect:" + (redirect != null ? redirect : "/myLibrary");
+    }
+
 }
