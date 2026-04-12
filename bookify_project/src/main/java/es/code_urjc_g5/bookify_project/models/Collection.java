@@ -13,8 +13,8 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-
 public class Collection {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
