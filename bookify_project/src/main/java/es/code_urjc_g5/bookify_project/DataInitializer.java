@@ -97,6 +97,42 @@ public class DataInitializer implements CommandLineRunner {
         book2.setIsbn(9780261102385L);
         bookRepository.save(book2);
 
+        // Tercer libro
+        Book book3 = Book.builder()
+                .title("Orgullo y Prejuicio")
+                .author("Jane Austen")
+                .genre("Romance")
+                .synopsis(
+                        "Una novela de romance y crítica social que sigue la historia de Elizabeth Bennet y su relación con el orgullo Mr. Darcy. A través del viaje de Elizabeth en busca del amor verdadero, Austen retrata la sociedad de la Regencia inglesa con ingenio y perspicacia. La novela explora temas de matrimonio, amor, amistad y la importancia de mirar más allá de las primeras impresiones para descubrir la verdadera naturaleza de las personas.")
+                .coverUrl(
+                        "https://imgs.search.brave.com/0qQv0rkSf0YCVhty2U32-J7JJk4ITKC7T6vpA_CuaEM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY2RuMy5idXNj/YWxpYnJlLmNvbS9m/aXQtaW4vMzYweDM2/MC80OS82Yy80OTZj/YzJkMjYwNzBjNGYx/OWQ3ZjhlOTNhMDky/NzRhYy5qcGc")
+                .pages(432)
+                .language("Español")
+                .publicationYear(1813)
+                .score(0)
+                .reviewCount(0)
+                .isbn(9788489367968L)
+                .build();
+        bookRepository.save(book3);
+
+        // Cuarto libro
+        Book book4 = Book.builder()
+                .title("El Código Da Vinci")
+                .author("Dan Brown")
+                .genre("Misterio/Thriller")
+                .synopsis(
+                        "Un enigma de arte, crimen e historia se desenvuelve ante Robert Langdon y Sophie Neveu cuando se ven envueltos en una conspiración que atraviesa siglos. Asesinado en el Museo del Louvre, un curador deja un mensaje críptico y un patrón oculto que lleva a Langdon y a Sophie en una búsqueda vertiginosa a través de Europa. Su investigación los lleva a cuestionar todo lo que sabían sobre el cristianismo, el arte y la historia mientras luchan por descubrir la verdad antes de ser silenciados.")
+                .coverUrl(
+                        "https://imgs.search.brave.com/fICO_tLodiucfbmgqgwRhnmlgnTM4IYzLDNeCuoJpYA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waWN0/dXJlcy5hYmVib29r/cy5jb20vaXNibi85/Nzg4NDk1NjE4ODE4/LWVzLTMwMC5qcGc")
+                .pages(689)
+                .language("Español")
+                .publicationYear(2003)
+                .score(0)
+                .reviewCount(0)
+                .isbn(9788408057765L)
+                .build();
+        bookRepository.save(book4);
+
         // Usuarios de prueba
         User user1 = new User();
         user1.setUserName("lector_infinito");
@@ -158,5 +194,12 @@ public class DataInitializer implements CommandLineRunner {
         coleccion3.getBooks().add(book);
         coleccion3.getBooks().add(book2);
         collectionRepository.save(coleccion3);
+
+        Collection coleccion4 = new Collection();
+        coleccion4.setCollectionName("Mis Favoritos");
+        coleccion4.setUser(user);
+        coleccion4.getBooks().add(book3);
+        coleccion4.getBooks().add(book4);
+        collectionRepository.save(coleccion4);
     }
 }
