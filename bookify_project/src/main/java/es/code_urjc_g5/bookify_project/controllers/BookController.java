@@ -55,6 +55,7 @@ public class BookController {
                     User user = userLoggedIn.get();
                     model.addAttribute("userCollections", collectionRepository.findByUser(user));
                     model.addAttribute("loggedIn", true);
+                    model.addAttribute("logged", true);
                 }
             }
 
