@@ -163,11 +163,16 @@
         {{#reviews}}
         <div class="card comment-card mb-3 border-0 shadow-sm">
           <div class="card-body">
-            <div class="d-flex justify-content-between">
-              <h6 class="fw-bold mb-1">Lector anónimo</h6>
+            <div class="d-flex justify-content-between align-items-start">
+              <h6 class="fw-bold mb-1">{{user.userName}}</h6>
               <span class="fw-bold brand-color">Puntuación: {{reviewRating}}/10</span>
             </div>
             <p class="card-text">{{reviewText}}</p>
+            {{#canDelete}}
+            <form action="/review/{{id}}/delete" method="post" class="mt-2">
+              <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>
+            </form>
+            {{/canDelete}}
           </div>
         </div>
         {{/reviews}}

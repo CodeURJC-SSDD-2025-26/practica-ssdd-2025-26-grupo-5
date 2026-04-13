@@ -1,7 +1,9 @@
 package es.code_urjc_g5.bookify_project.controllers;
 
 import java.util.Optional;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,10 +20,6 @@ import es.code_urjc_g5.bookify_project.repositories.BookRepository;
 import es.code_urjc_g5.bookify_project.repositories.CollectionRepository;
 import es.code_urjc_g5.bookify_project.repositories.ReviewRepository;
 import es.code_urjc_g5.bookify_project.services.UserService;
-
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
 import es.code_urjc_g5.bookify_project.models.Collection;
 
 @Controller
@@ -45,17 +43,34 @@ public class BookController {
             Book book = optionalBook.get();
             List<Review> reviews = reviewRepository.findByBook(book);
 
+            String currentEmail = (authentication != null && authentication.isAuthenticated())
+                    ? authentication.getName() : null;
+            boolean isAdmin = currentEmail != null && authentication.getAuthorities().stream()
+                    .anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"));
+
+            List<Map<String, Object>> reviewsWithFlags = reviews.stream().map(r -> {
+                Map<String, Object> map = new HashMap<>();
+                map.put("id", r.getId());
+                map.put("reviewText", r.getReviewText());
+                map.put("reviewRating", r.getReviewRating());
+                map.put("user", r.getUser());
+                boolean isOwner = r.getUser() != null && r.getUser().getUserEmail().equals(currentEmail);
+                map.put("canDelete", isAdmin || isOwner);
+                return map;
+            }).toList();
+
             model.addAttribute("book", book);
-            model.addAttribute("reviews", reviews);
+            model.addAttribute("reviews", reviewsWithFlags);
 
             // Shows collections only if user is logged in
-            if (authentication != null && authentication.isAuthenticated()) {
+            if (authentication != null && authentication.isAuthenticated() 
+            && !(authentication instanceof org.springframework.security.authentication.AnonymousAuthenticationToken)) {
                 Optional<User> userLoggedIn = userService.findByEmail(authentication.getName());
                 if (userLoggedIn.isPresent()) {
                     User user = userLoggedIn.get();
                     model.addAttribute("userCollections", collectionRepository.findByUser(user));
                     model.addAttribute("loggedIn", true);
-                    model.addAttribute("logged", true);
+                    model.addAttribute("currentUserEmail", user.getUserEmail());
                 }
             }
 
@@ -109,7 +124,8 @@ public class BookController {
     @PostMapping("/book/{id}/review")
     public String addReview(@PathVariable Long id,
             @RequestParam String reviewText,
-            @RequestParam int reviewRating) {
+            @RequestParam int reviewRating,
+            Authentication authentication) {
         Optional<Book> optionalBook = bookRepository.findById(id);
         if (optionalBook.isPresent()) {
             Book book = optionalBook.get();
@@ -117,6 +133,10 @@ public class BookController {
             review.setReviewText(reviewText);
             review.setReviewRating(reviewRating);
             review.setBook(book);
+            if (authentication != null && authentication.isAuthenticated()) {
+                userService.findByEmail(authentication.getName())
+                        .ifPresent(review::setUser);
+        }
             reviewRepository.save(review);
 
             // Recalculate score and reviewCount from real reviews
@@ -130,6 +150,36 @@ public class BookController {
             bookRepository.save(book);
         }
         return "redirect:/book/" + id;
+    }
+
+    @PostMapping("/review/{reviewId}/delete")
+    public String deleteReview(@PathVariable Long reviewId, Authentication authentication) {
+        Optional<Review> optionalReview = reviewRepository.findById(reviewId);
+        if (optionalReview.isEmpty()) {
+            return "redirect:/";
+        }
+        Review review = optionalReview.get();
+        Long bookId = review.getBook().getId();
+
+        boolean isAdmin = authentication.getAuthorities().stream()
+                .anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"));
+        boolean isOwner = review.getUser() != null &&
+                review.getUser().getUserEmail().equals(authentication.getName());
+
+        if (!isAdmin && !isOwner) {
+            return "redirect:/book/" + bookId + "?error=forbidden";
+        }
+
+        reviewRepository.delete(review);
+
+        Book book = review.getBook();
+        List<Review> remaining = reviewRepository.findByBook(book);
+        book.setReviewCount(remaining.size());
+        double avg = remaining.stream().mapToInt(Review::getReviewRating).average().orElse(0.0);
+        book.setScore(Math.round(avg * 10.0) / 10.0);
+        bookRepository.save(book);
+
+        return "redirect:/book/" + bookId;
     }
 
     @PostMapping("/collection/{collectionId}/addBook/{bookId}")
