@@ -48,6 +48,7 @@ public class UserController {
     public String showUser(Model model, @PathVariable Long id) {
         Optional<User> optionalUser = users.findById(id);
         if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
             model.addAttribute("user", optionalUser.get());
             System.out.println("Phone: " + optionalUser.get().getUserPhone()); // Para verificar que lombok funciona
             return "profile";

@@ -1,11 +1,14 @@
 package es.code_urjc_g5.bookify_project.controllers;
 
+import java.util.Optional;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
+
 import es.code_urjc_g5.bookify_project.models.User;
 
 import es.code_urjc_g5.bookify_project.services.UserService;
@@ -42,8 +45,13 @@ public class loginController {
     // Perfil del usuario autenticado
     @GetMapping("/profile/me")
     public String myProfile(Model model, Authentication auth) {
-        userService.findByEmail(auth.getName())
-                .ifPresent(user -> model.addAttribute("user", user));
+        Optional<User> optionalUser = userService.findByEmail(auth.getName());
+        if (optionalUser.isEmpty()) {
+            return "redirect:/login";
+        }
+        model.addAttribute("user", optionalUser.get());
+        model.addAttribute("isAdmin", optionalUser.get().isAdmin());
         return "profile";
+
     }
 }
