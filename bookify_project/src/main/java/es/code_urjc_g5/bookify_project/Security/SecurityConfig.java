@@ -40,6 +40,8 @@ public class SecurityConfig {
                                                 .requestMatchers("/login", "/signUp").permitAll()
                                                 .requestMatchers("/profile/me", "/myLibrary", "/collection/**")
                                                 .authenticated()
+                                                .requestMatchers("/admin/**").hasRole("ADMIN") // solo admins pueden
+                                                                                               // acceder a /admin
                                                 .anyRequest().authenticated() // el resto también requiere login
                                 )
                                 .formLogin(form -> form

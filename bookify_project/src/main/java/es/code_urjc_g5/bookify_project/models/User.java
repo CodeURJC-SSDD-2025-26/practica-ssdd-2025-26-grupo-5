@@ -1,4 +1,5 @@
 package es.code_urjc_g5.bookify_project.models;
+
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -9,14 +10,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-
 @Entity
 @Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
+
     private String userName;
     private String userEmail;
     private String userPhone;
@@ -28,14 +28,14 @@ public class User {
     private String userPassword;
     private String shortDesc;
     private String userSince;
-    
+
     private int userBooksRead;
     private int userBooksInProgress;
     private int userBooksWishlist;
 
     private String userRole; // "USER" o "ADMIN"
     // Getters y Setters
-    
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Collection> collections;
 
@@ -350,5 +350,8 @@ public class User {
         return result;
     }
 
-    
+    public boolean isAdmin() {
+        return this.userRole != null && this.userRole.equals("ADMIN");
+    }
+
 }
